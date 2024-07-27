@@ -30,7 +30,7 @@ const Hero = () => {
           Stylish and comfortable short-term rentals for your next Seattle adventure
         </p>
         <button className="btn btn-primary btn-wide">
-          Get {config.appName}
+          Book With {config.appName} 
         </button>
 
         <TestimonialsAvatars priority={true} />

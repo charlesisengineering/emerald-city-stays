@@ -1,3 +1,6 @@
+import Image from "next/image";
+import image1 from "@/app/landingpic.jpg"
+
 
 // <Properties/> displays the short term rental property pages
 // See <Pricing/> for the origin of this page
@@ -13,9 +16,37 @@ const Properties = () => {
             We have you convered from Shoreline to Tukwila
           </h2>
         </div>
-
-
       </div>
+
+      <div className="grid gap-4 grid-cols-3 grid-rows-2" id="testgrid">
+    </div>
+
+    <div className="flex flex-row">
+        <div className="flex-1 bg-gray-200 p-4 m-2">Item 1</div>
+        <div className="flex-1 bg-gray-200 p-4 m-2">Item 2</div>
+        <div className="flex-1 bg-gray-200 p-4 m-2">Item 3</div>
+    </div>
+
+    <div className="grid grid-cols-3 gap-4">
+        <div className="bg-gray-200 p-4">
+        <Image 
+            src={image1} 
+            alt="Image 1" 
+            className="w-full h-auto"           
+            priority={true}
+            width={500}
+            height={500}
+        />
+    </div>
+        <div className="bg-gray-200 p-4">
+
+    </div>
+    <div className="bg-gray-200 p-4">
+
+    </div>
+</div>
+
+      
     </section>
   );
 };

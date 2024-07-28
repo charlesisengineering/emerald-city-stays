@@ -1,5 +1,7 @@
 import Image from "next/image";
 import image1 from "@/app/landingpic.jpg"
+import image2 from "@/app/Songbird.jpg"
+import image3 from "@/app/Launchpad.jpg"
 import Link from "next/link";
 
 
@@ -12,15 +14,15 @@ const links: {
   }[] = [
     {
       href: "/#pricing",
-      label: "Pricing",
+      label: "Property 1",
     },
     {
       href: "/#testimonials",
-      label: "Reviews",
+      label: "Property 2",
     },
     {
       href: "/#faq",
-      label: "FAQ",
+      label: "Property 3",
     },
   ];
 
@@ -47,38 +49,45 @@ const Properties = () => {
     </div> */}
 
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-gray-200 p-4">
-        <Image 
-            src={image1} 
-            alt="Image 1" 
-            className="w-full h-auto"           
-            priority={true}
-            width={500}
-            height={500}
-        />
-    </div>
-        <div className="bg-gray-200 p-4">
-        <Image 
-            src={image1} 
-            alt="Image 1" 
-            className="w-full h-auto"           
-            priority={true}
-            width={500}
-            height={500}
-        />
+        <Link href="/#Property1">
+            <div className="bg-gray-200 p-4">
+                <Image 
+                    src={image1} 
+                    alt="Image 1" 
+                    className="w-full h-auto"           
+                    priority={true}
+                    width={500}
+                    height={500}
+                />  
+            </div>
+        </Link>
 
-    </div>
-    <div className="bg-gray-200 p-4">
-    <Image 
-            src={image1} 
-            alt="Image 1" 
-            className="w-full h-auto"           
-            priority={true}
-            width={500}
-            height={500}
-        />
+        <Link href="/#Property2">
+            <div className="bg-gray-200 p-4">
+                <Image 
+                    src={image2} 
+                    alt="Image 1" 
+                    className="w-full h-auto"           
+                    priority={true}
+                    width={500}
+                    height={500}
+                />  
+            </div>
+        </Link>
 
-    </div>
+
+        <Link href="/#Property3">
+            <div className="bg-gray-200 p-4">
+                <Image 
+                    src={image3} 
+                    alt="Image 1" 
+                    className="w-full h-auto"           
+                    priority={true}
+                    width={500}
+                    height={500}
+                />  
+            </div>
+        </Link>
 </div>
 
       

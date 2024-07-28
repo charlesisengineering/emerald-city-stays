@@ -1,11 +1,11 @@
 // PropertyCard.tsx
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 interface PropertyCardProps {
   href: string;
   title: string;
-  imageSrc: string;
+  imageSrc: StaticImageData;
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ href, title, imageSrc }) => {

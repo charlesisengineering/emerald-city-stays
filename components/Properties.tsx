@@ -40,72 +40,14 @@ const Properties = () => {
       </div>
 
       <div className="grid gap-4 grid-cols-3 grid-rows-2" id="testgrid">
-    </div>
-
-    {/* <div className="flex flex-row">
-        <div className="flex-1 bg-gray-200 p-4 m-2">Item 1</div>
-        <div className="flex-1 bg-gray-200 p-4 m-2">Item 2</div>
-        <div className="flex-1 bg-gray-200 p-4 m-2">Item 3</div>
-    </div> */}
+        </div>
 
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-    <Link href="/#Property1">
-        <div className="bg-gray-200 p-4 aspect-ratio-4/3 rounded-xl">
-        <div className="relative h-full rounded-xl overflow-hidden">
-            <Image
-            src={image1}
-            alt="Image 1"
-            className="w-full h-full object-cover"
-            priority={true}
-            width={500}
-            height={500}
-            />
-            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2 text-white">
-            <h3 className="text-lg font-semibold">Property 1</h3>
-            </div>
-        </div>
-        </div>
-    </Link>
-
-    <Link href="/#Property2">
-        <div className="bg-gray-200 p-4 aspect-ratio-4/3 rounded-xl">
-        <div className="relative h-full rounded-xl overflow-hidden">
-            <Image
-            src={image2}
-            alt="Image 1"
-            className="w-full h-full object-cover"
-            priority={true}
-            width={500}
-            height={500}
-            />
-            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2 text-white">
-            <h3 className="text-lg font-semibold">Property 2</h3>
-            </div>
-        </div>
-        </div>
-    </Link>
-
-    <Link href="/#Property3">
-        <div className="bg-gray-200 p-4 aspect-ratio-4/3 rounded-xl">
-        <div className="relative h-full rounded-xl overflow-hidden">
-            <Image
-            src={image3}
-            alt="Image 1"
-            className="w-full h-full object-cover"
-            priority={true}
-            width={500}
-            height={500}
-            />
-            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2 text-white">
-            <h3 className="text-lg font-semibold">Property 3</h3>
-            </div>
-        </div>
-        </div>
-    </Link>
+        < PropertyCard href="/#Property1" title="Sound Breeze" imageSrc={image1}/>
+        < PropertyCard href="/#Property2" title="Songbird Suite" imageSrc={image2}/>
+        < PropertyCard href="/#Property3" title="Launchpad" imageSrc={image3}/>
     </div>
 
-
-      
     </section>
   );
 };

@@ -1,6 +1,8 @@
 // PropertyCard.tsx
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+import * as React from 'react';
+
 
 interface PropertyCardProps {
   href: string;

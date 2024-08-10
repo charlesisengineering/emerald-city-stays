@@ -1,6 +1,15 @@
-import Image from "next/image";
+// this page is a server component by default which does not allow event listeners e.g. onClick or state effects e.g. useState
+// this currently causes react-slick to throw a fit, let's try setting the page to a client component
+// TODO read https://nextjs.org/docs/app/building-your-application/rendering#when-to-use-server-and-client-components
+// TODO read https://stackoverflow.com/questions/74614922/super-expression-must-either-be-null-or-a-function-nextjs-13
+'use client'
+
 import image1 from "@/app/landingpic.jpg"
-import Link from "next/link";
+import image2 from "@/app/Launchpad.jpg"
+import image3 from "@/app/Songbird.jpg"
+import PictureSlideshow from "./PictureSlideshow"
+
+const propertyName = 'Sound Breeze'
 
 
 // <Properties/> displays the short term rental property pages
@@ -10,27 +19,45 @@ import Link from "next/link";
 
 
 const Property1 = () => {
+    const images = [
+        image1,
+        image2,
+        image3
+    ];
+
+
+
   return (
     <section className="bg-base-200 overflow-hidden" id="Property1">
       <div className="py-24 px-8 max-w-5xl mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <p className="font-medium text-primary mb-8">Property 1</p>
+          <p className="font-medium text-primary mb-8">{propertyName}</p>
           <h2 className="font-bold text-3xl lg:text-5xl tracking-tight">
-            {'Name of Property 1'}
+            {propertyName}
           </h2>
         </div>
       </div>
 
-      {/* Container with minimum width and height */}
-      <div className="min-w-[320px] h-[900px] bg-gray-200 p-4 mx-auto">
-      <iframe 
-        id="booking-iframe" 
-        sandbox="allow-top-navigation allow-scripts allow-same-origin" 
-        style={{ width: '100%', height: '900px' }}
-        frameBorder="0" 
-        src="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/493270"></iframe>
-      </div>
+        {/* Container with flexbox layout 
+        TODO ask Q to help us establish a fallback strategy for browsers that don't support Flexbox*/}
+        <div className="flex min-w-[320px] bg-gray-200 p-4 mx-auto">
+                {/* Picture slideshow */}
+                <div className="w-1/2 mr-4">
+                <PictureSlideshow images={images}/>
+                <p>Picture Slideshow</p>
+                </div>
 
+                {/* Booking iframe */}
+                <div className="w-1/2">
+                <iframe
+                    id="booking-iframe"
+                    sandbox="allow-top-navigation allow-scripts allow-same-origin"
+                    style={{ width: '100%', height: '900px' }}
+                    frameBorder="0"
+                    src="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/493270"
+                />
+                </div>
+            </div>
 
 
       

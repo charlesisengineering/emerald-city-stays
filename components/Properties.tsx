@@ -2,7 +2,6 @@ import Image from "next/image";
 import image1 from "@/app/landingpic.jpg"
 import image2 from "@/app/Songbird.jpg"
 import image3 from "@/app/Launchpad.jpg"
-import Link from "next/link";
 import PropertyCard from "./PropertyCard";
 
 // <Properties/> displays the short term rental property pages

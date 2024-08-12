@@ -4,9 +4,10 @@
 // TODO read https://stackoverflow.com/questions/74614922/super-expression-must-either-be-null-or-a-function-nextjs-13
 'use client'
 
-import image1 from "@/app/landingpic.jpg"
-import image2 from "@/app/Launchpad.jpg"
-import image3 from "@/app/Songbird.jpg"
+import image1 from "@/app/GatewoodPhotos/entry.jpg"
+import image2 from "@/app/GatewoodPhotos/couch.jpg"
+import image3 from "@/app/GatewoodPhotos/king_bed.jpg"
+import image4 from "@/app/GatewoodPhotos/bathroom.jpg"
 import PictureSlideshow from "./PictureSlideshow"
 
 const propertyName = 'Sound Breeze'
@@ -22,7 +23,8 @@ const Property1 = () => {
     const images = [
         image1,
         image2,
-        image3
+        image3,
+        image4
     ];
 
 

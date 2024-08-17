@@ -1,7 +1,7 @@
 import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
 import config from "@/config";
-import logo from "@/app/landingpic.jpg";
+import image from "@/app/landingpic.jpg";
 
 
 const Hero = () => {
@@ -37,7 +37,7 @@ const Hero = () => {
       </div>
       <div className="lg:w-full">
         <Image
-          src={logo} // TODO learn how to properly embed an image without defining it as a logo
+          src={image} // TODO learn how to properly embed an image without defining it as a logo
           alt="Product Demo"
           className="w-full"
           priority={true}

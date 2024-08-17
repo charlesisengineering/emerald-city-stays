@@ -42,24 +42,27 @@ const Property1 = () => {
 
         {/* Container with flexbox layout 
         TODO ask Q to help us establish a fallback strategy for browsers that don't support Flexbox*/}
-        <div className="flex min-w-[320px] bg-gray-200 p-4 mx-auto">
+        <div className="flex bg-gray-200 p-4 max-h-svh">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr,350px] gap-4 xl:grid-cols-[1fr,350px]">
                 {/* Picture slideshow */}
-                <div className="w-1/2 mr-4">
-                <PictureSlideshow images={images}/>
-                <p>Picture Slideshow</p>
+                <div className="flex justify-center">
+                    <div className="w-11/12">
+                        <PictureSlideshow images={images}/>
+                    </div>
                 </div>
 
                 {/* Booking iframe */}
-                <div className="w-1/2">
-                <iframe
-                    id="booking-iframe"
-                    sandbox="allow-top-navigation allow-scripts allow-same-origin"
-                    style={{ width: '100%', height: '900px' }}
-                    frameBorder="0"
-                    src="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/493270"
-                />
+                <div className="flex justify-center items-center">
+                    <iframe
+                        id="booking-iframe"
+                        sandbox="allow-top-navigation allow-scripts allow-same-origin"
+                        style={{ width: '320px', height: '900px' }}
+                        frameBorder="0"
+                        src="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/493270"
+                    />  
                 </div>
             </div>
+        </div>
 
 
       

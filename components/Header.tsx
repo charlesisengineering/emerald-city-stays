@@ -40,7 +40,7 @@ const Header = () => {
   const searchParams = useSearchParams();
   const [mobileMenuIsOpen, setMobileMenuOpen] = useState<boolean>(false);
 
-  function checkScrollDirection(){
+  function useScrollDirection(){
     const [scrollDirection, setScrollDirection] = useState(null); // Q suggested useSatate("up")
 
     useEffect(() => { // useEffect is for code side-effects. It gets called after initial render and any re-render when dependency array vals have changed
@@ -69,7 +69,7 @@ const Header = () => {
     setMobileMenuOpen(false);
   }, [searchParams]); // TODO resolve issue of stale urls due to scroll-away causing mobile menu not to close
 
-  const scrollDir = checkScrollDirection();
+  const scrollDir = useScrollDirection();
 
   return (
   <header className={`sticky z-50 ${ scrollDir === "down" ? "-top-20" : "top-0"} h-20 bg-base-200 transition-all duration-500`}>

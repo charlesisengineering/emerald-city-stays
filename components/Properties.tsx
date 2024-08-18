@@ -1,4 +1,4 @@
-import Image from "next/image";
+import React from 'react'
 import image1 from "@/app/landingpic.jpg"
 import image2 from "@/app/Songbird.jpg"
 import image3 from "@/app/Launchpad.jpg"
@@ -6,25 +6,6 @@ import PropertyCard from "./PropertyCard";
 
 // <Properties/> displays the short term rental property pages
 // See <Pricing/> for the origin of this page
-
-const links: {
-    href: string;
-    label: string;
-  }[] = [
-    {
-      href: "/#pricing",
-      label: "Property 1",
-    },
-    {
-      href: "/#testimonials",
-      label: "Property 2",
-    },
-    {
-      href: "/#faq",
-      label: "Property 3",
-    },
-  ];
-
 
 const Properties = () => {
   return (

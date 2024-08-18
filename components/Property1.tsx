@@ -13,13 +13,6 @@ import React from 'react'
 
 const propertyName = 'Sound Breeze'
 
-
-// <Properties/> displays the short term rental property pages
-// See <Pricing/> for the origin of this page
-
-
-
-
 const Property1 = () => {
     const images = [
         image1,
@@ -27,8 +20,6 @@ const Property1 = () => {
         image3,
         image4
     ];
-
-
 
   return (
     <section className="bg-base-200 overflow-hidden" id="Property1">
@@ -41,14 +32,12 @@ const Property1 = () => {
         </div>
       </div>
 
-        {/* Container with flexbox layout 
-        TODO ask Q to help us establish a fallback strategy for browsers that don't support Flexbox
-        TODO figure out why 1fr isn't working for my grid template columns but hardcoded values are working
-        */}
+        {/* Container with flexbox layout */}
         <div className="flex bg-gray-200 p-4 max-h-svh">
-            <div className="grid grid-cols-1 md:grid-cols-[1fr,350px] gap-4 xl:grid-cols-[800px,350px]">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr,350px] gap-4">
+                
                 {/* Picture slideshow */}
-                <div className="flex justify-center">
+                <div className="flex justify-center md:overflow-hidden"> {/* TODO learn why overflow-hidden fixes layouts with two columns, breaks those with one column*/}
                     <div className="w-11/12">
                         <PictureSlideshow images={images}/>
                     </div>
@@ -66,8 +55,6 @@ const Property1 = () => {
                 </div>
             </div>
         </div>
-
-
       
     </section>
   );

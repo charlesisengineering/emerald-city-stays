@@ -40,13 +40,39 @@ const Header = () => {
   const searchParams = useSearchParams();
   const [mobileMenuIsOpen, setMobileMenuOpen] = useState<boolean>(false);
 
+  function checkScrollDirection(){
+    const [scrollDirection, setScrollDirection] = useState(null); // Q suggested useSatate("up")
+
+    useEffect(() => { // useEffect is for code side-effects. It gets called after initial render and any re-render when dependency array vals have changed
+        let lastScrollY = window.scrollY; // JS docs recommend window.pageYOffset for compatibility, it's struck through when I add it
+
+        const updateScrollDirection = () => { // function to 
+            const scrollY = window.scrollY;
+            const direction = scrollY > lastScrollY ? "down" : "up";
+            if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)){
+                setScrollDirection(direction);
+            }
+            lastScrollY = scrollY > 0 ? scrollY : 0;
+        }
+
+        window.addEventListener("scroll", updateScrollDirection); // add event listener
+        return () => {
+            window.removeEventListener("scroll", updateScrollDirection); // clean up event listener on component dismount and new useEffect calls
+        }
+    },[scrollDirection]);
+
+    return scrollDirection;
+  }
+
   // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
   useEffect(() => {
     setMobileMenuOpen(false);
-  }, [searchParams]);
+  }, [searchParams]); // TODO resolve issue of stale urls due to scroll-away causing mobile menu not to close
+
+  const scrollDir = checkScrollDirection();
 
   return (
-    <header className="bg-base-200 fixed z-50 w-full">
+  <header className={`sticky z-50 ${ scrollDir === "down" ? "-top-20" : "top-0"} h-20 bg-base-200 transition-all duration-500`}>
       <nav
         className="container flex items-center justify-between px-8 py-4 mx-auto"
         aria-label="Global"

@@ -1,3 +1,5 @@
+// TODO it looks like the extreme right side of pictures shows overlap of the next image in the carousel, fix that
+
 import React from 'react';
 import Slider from 'react-slick';
 import Image, { StaticImageData } from 'next/image';

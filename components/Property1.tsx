@@ -9,6 +9,7 @@ import image2 from "@/app/GatewoodPhotos/couch.jpg"
 import image3 from "@/app/GatewoodPhotos/king_bed.jpg"
 import image4 from "@/app/GatewoodPhotos/bathroom.jpg"
 import PictureSlideshow from "./PictureSlideshow"
+import React from 'react'
 
 const propertyName = 'Sound Breeze'
 
@@ -41,9 +42,11 @@ const Property1 = () => {
       </div>
 
         {/* Container with flexbox layout 
-        TODO ask Q to help us establish a fallback strategy for browsers that don't support Flexbox*/}
+        TODO ask Q to help us establish a fallback strategy for browsers that don't support Flexbox
+        TODO figure out why 1fr isn't working for my grid template columns but hardcoded values are working
+        */}
         <div className="flex bg-gray-200 p-4 max-h-svh">
-            <div className="grid grid-cols-1 md:grid-cols-[1fr,350px] gap-4 xl:grid-cols-[1fr,350px]">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr,350px] gap-4 xl:grid-cols-[800px,350px]">
                 {/* Picture slideshow */}
                 <div className="flex justify-center">
                     <div className="w-11/12">

@@ -72,7 +72,7 @@ const Header = () => {
   const scrollDir = useScrollDirection();
 
   return (
-  <header className={`sticky z-50 ${ scrollDir === "down" ? "-top-20" : "top-0"} h-20 bg-base-200 transition-all duration-500`}>
+  <header data-theme="mybrand" className={`sticky z-50 ${ scrollDir === "down" ? "-top-20" : "top-0"} h-20 bg-base-200 transition-all duration-500`}>
       <nav
         className="container flex items-center justify-between px-8 py-4 mx-auto"
         aria-label="Global"

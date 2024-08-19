@@ -33,7 +33,7 @@ const Property1 = () => {
       </div>
 
         {/* Container with flexbox layout */}
-        <div className="flex bg-gray-200 p-4 max-h-svh">
+        <div className="flex bg-gray-200 p-4">
             <div className="grid grid-cols-1 md:grid-cols-[1fr,350px] gap-4">
                 
                 {/* Picture slideshow */}

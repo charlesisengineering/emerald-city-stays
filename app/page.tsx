@@ -19,10 +19,10 @@ export default function Home() {
         <Hero />
         <Properties />
         <Property1 />
-        <Property2 />
+        {/* <Property2 />
         <Property3 />
         <FAQ />
-        <CTA />
+        <CTA /> */}
       </main>
       <Footer />
     </>

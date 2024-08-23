@@ -85,6 +85,94 @@ const Property1 = () => {
                     professionals and are generally in bed early.
                     </p>
                 </article>
+            </div>
+
+            <div className="grid grid-cols-1 justify-center p-4 lg:p-10">
+                <div className="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" defaultChecked />
+                    <div className="collapse-title text-xl font-medium">Basic Amenities</div>
+                    <div className="collapse-content">
+                        <article className="prose">
+                            <ul>
+                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
+                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
+                                <li>Dishes and silverware</li>
+                                <li>Washing machine and dryer</li>
+                                <li>Smart TV</li>
+                                <li>Wifi</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+                <div className="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" defaultChecked />
+                    <div className="collapse-title text-xl font-medium">Kitchen Amenities</div>
+                    <div className="collapse-content">
+                        <article className="prose">
+                            <ul>
+                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
+                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
+                                <li>Dishes and silverware</li>
+                                <li>Washing machine and dryer</li>
+                                <li>Smart TV</li>
+                                <li>Wifi</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+                <div className="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" defaultChecked />
+                    <div className="collapse-title text-xl font-medium">Bathroom Amenities</div>
+                    <div className="collapse-content">
+                        <article className="prose">
+                            <ul>
+                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
+                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
+                                <li>Dishes and silverware</li>
+                                <li>Washing machine and dryer</li>
+                                <li>Smart TV</li>
+                                <li>Wifi</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+                <div className="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" defaultChecked />
+                    <div className="collapse-title text-xl font-medium">Bedroom Amenities</div>
+                    <div className="collapse-content">
+                        <article className="prose">
+                            <ul>
+                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
+                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
+                                <li>Dishes and silverware</li>
+                                <li>Washing machine and dryer</li>
+                                <li>Smart TV</li>
+                                <li>Wifi</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+                <div className="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" defaultChecked />
+                    <div className="collapse-title text-xl font-medium">Additional Amenities</div>
+                    <div className="collapse-content">
+                        <article className="prose">
+                            <ul>
+                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
+                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
+                                <li>Dishes and silverware</li>
+                                <li>Washing machine and dryer</li>
+                                <li>Smart TV</li>
+                                <li>Wifi</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
 
             </div>
 

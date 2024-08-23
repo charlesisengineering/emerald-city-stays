@@ -9,11 +9,11 @@ import PropertyCard from "./PropertyCard";
 
 const Properties = () => {
   return (
-    <section className="bg-base-200 overflow-hidden" id="properties" data-theme="mybrand">
-      <div className="py-24 px-8 max-w-5xl mx-auto">
-        <div className="flex flex-col text-center w-full mb-20">
-          <p className="font-medium text-primary mb-8">Our Properties</p>
-          <h2 className="font-bold text-3xl lg:text-5xl tracking-tight">
+    <section className="bg-base-100 overflow-hidden" id="properties" data-theme="mybrand">
+      <div className="py-8 px-8 max-w-5xl mx-auto">
+        <div className="flex flex-col text-center w-full mb-10">
+          <p className="font-bold text-3xl lg:text-5xl tracking-tight text-primary mb-8">Our Properties</p>
+          <h2 className="font-medium text-xl lg:text-2xl tracking-tight">
             {'We\'ve got you convered from Shoreline to Tukwila'}
           </h2>
         </div>

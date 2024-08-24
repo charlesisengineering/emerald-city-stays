@@ -94,10 +94,10 @@ const Property1 = () => {
                     <div className="collapse-content">
                         <article className="prose">
                             <ul>
-                                <li>fully stocked kitchen for cooking meals</li>
+                                <li>fully stocked kitchen for cooking</li>
                                 <li>washing machine and dryer</li>
                                 <li>smart tv, couch, coffee table</li>
-                                <li>high speed wifi, office with desk, chair</li>
+                                <li>high speed wifi, office with workstation</li>
                                 <li>towels, linens, pillows, toilet paper</li>
                             </ul>
                         </article>
@@ -171,6 +171,40 @@ const Property1 = () => {
 
             </div>
 
+        </div>
+
+        <div className="grid grid-cols-1 mx-auto md:grid-cols-2 gap-4 ">
+            <div className="flex justify-center p-4 lg:p-10">
+                <article className="prose lg:prose-l">
+                    <h3> About the Neighborhood</h3>
+                    <p>
+                    Gatewood is a serene neighborhood with lush greenery, abundant parks and cafes, 
+                    and stunning views of the Puget Sound and Downtown Seattle. The quiet neighborhood 
+                    is a walker's delight with multiple parks and coffee shops like Nos Nos, Realfine, and Cafe 
+                    Ladro within easy walking distance.
+                    </p>
+
+                    <p>
+                    Getting to the West Seattle junction is a short bus ride away on the 128 and Downtown 
+                    Seattle is just over 20 minutes away on the 21 bus - both stops are less than two 
+                    blocks away. Finally, for guests with cars we offer safe off street parking and a 
+                    15 minute drive to Downtown Seattle .
+                    </p>
+                </article>
+            </div>
+
+            <div className="flex justify-center p-4 lg:p-10">
+                <article className="prose lg:prose-l">
+                    <h3>House Rules</h3>
+                    <p>
+                    Lorem ipsum
+                    </p>
+
+                    <p>
+                    The quick brown fox jumped over the lazy dog.
+                    </p>
+                </article>
+            </div>
         </div>
       
     </section>

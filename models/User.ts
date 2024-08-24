@@ -47,3 +47,4 @@ const userSchema = new mongoose.Schema(
 userSchema.plugin(toJSON);
 
 export default mongoose.models.User || mongoose.model("User", userSchema);
+

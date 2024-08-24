@@ -10,6 +10,7 @@ import image3 from "@/app/GatewoodPhotos/king_bed.jpg"
 import image4 from "@/app/GatewoodPhotos/bathroom.jpg"
 import PictureSlideshow from "./PictureSlideshow"
 import React from 'react'
+import { Suspense } from "react";
 
 const propertyName = 'Sound Breeze'
 
@@ -41,7 +42,9 @@ const Property1 = () => {
                 {/* Picture slideshow */}
                 <div className="flex justify-center md:overflow-hidden"> {/* TODO learn why overflow-hidden fixes layouts with two columns, breaks those with one column*/}
                     <div className="w-11/12">
-                        <PictureSlideshow images={images}/>
+                        <Suspense>
+                            <PictureSlideshow images={images}/>
+                        </Suspense>
                     </div>
                 </div>
 
@@ -180,15 +183,14 @@ const Property1 = () => {
                     <p>
                     Gatewood is a serene neighborhood with lush greenery, abundant parks and cafes, 
                     and stunning views of the Puget Sound and Downtown Seattle. The quiet neighborhood 
-                    is a walker&apos;s delight with multiple parks and coffee shops like Nos Nos, Realfine, and Cafe 
-                    Ladro within easy walking distance.
+                    is a walker&apos;s delight with multiple parks, coffee shops and restaurants within easy walking distance.
                     </p>
 
                     <p>
-                    Getting to the West Seattle junction is a short bus ride away on the 128 and Downtown 
-                    Seattle is just over 20 minutes away on the 21 bus - both stops are less than two 
+                    The West Seattle Junction is a short bus ride away on the 128 line and Downtown 
+                    Seattle is just 20 minutes away on the 21 bus - both stops are less than two 
                     blocks away. Finally, for guests with cars we offer safe off street parking and a 
-                    15 minute drive to Downtown Seattle .
+                    15 minute drive to Downtown Seattle.
                     </p>
                 </article>
             </div>

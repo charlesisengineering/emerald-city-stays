@@ -10,7 +10,6 @@ import image3 from "@/app/GatewoodPhotos/king_bed.jpg"
 import image4 from "@/app/GatewoodPhotos/bathroom.jpg"
 import PictureSlideshow from "./PictureSlideshow"
 import React from 'react'
-import { Suspense } from "react";
 
 const propertyName = 'Sound Breeze'
 
@@ -42,9 +41,7 @@ const Property1 = () => {
                 {/* Picture slideshow */}
                 <div className="flex justify-center md:overflow-hidden"> {/* TODO learn why overflow-hidden fixes layouts with two columns, breaks those with one column*/}
                     <div className="w-11/12">
-                        <Suspense>
                             <PictureSlideshow images={images}/>
-                        </Suspense>
                     </div>
                 </div>
 

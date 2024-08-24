@@ -94,12 +94,11 @@ const Property1 = () => {
                     <div className="collapse-content">
                         <article className="prose">
                             <ul>
-                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
-                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
-                                <li>Dishes and silverware</li>
-                                <li>Washing machine and dryer</li>
-                                <li>Smart TV</li>
-                                <li>Wifi</li>
+                                <li>fully stocked kitchen for cooking meals</li>
+                                <li>washing machine and dryer</li>
+                                <li>smart tv, couch, coffee table</li>
+                                <li>high speed wifi, office with desk, chair</li>
+                                <li>towels, linens, pillows, toilet paper</li>
                             </ul>
                         </article>
                     </div>
@@ -107,16 +106,16 @@ const Property1 = () => {
 
                 <div className="collapse collapse-plus bg-base-200">
                     <input type="radio" name="my-accordion-3" defaultChecked />
-                    <div className="collapse-title text-xl font-medium">Kitchen Amenities</div>
+                    <div className="collapse-title text-xl font-medium">Kitchen and Dining Amenities</div>
                     <div className="collapse-content">
                         <article className="prose">
                             <ul>
-                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
-                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
-                                <li>Dishes and silverware</li>
-                                <li>Washing machine and dryer</li>
-                                <li>Smart TV</li>
-                                <li>Wifi</li>
+                                <li>stove, oven, dishwasher, microwave</li>
+                                <li>full refrigerator & freezer</li>
+                                <li>pots, pans, oil, seasonings</li>
+                                <li>dishes, silverware, paper towels</li>
+                                <li>coffee, coffee maker, electric kettle</li>
+                                <li>toaster, dining table</li>
                             </ul>
                         </article>
                     </div>
@@ -128,12 +127,11 @@ const Property1 = () => {
                     <div className="collapse-content">
                         <article className="prose">
                             <ul>
-                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
-                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
-                                <li>Dishes and silverware</li>
-                                <li>Washing machine and dryer</li>
-                                <li>Smart TV</li>
-                                <li>Wifi</li>
+                                <li>shower, bathtub, bath mat</li>
+                                <li>body wash, shampoo, conditioner</li>
+                                <li>blow dryer, black makeup towels</li>
+                                <li>towels, hand towels, toilet paper</li>
+                                <li>cotton balls, hand soap</li>
                             </ul>
                         </article>
                     </div>
@@ -145,12 +143,12 @@ const Property1 = () => {
                     <div className="collapse-content">
                         <article className="prose">
                             <ul>
-                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
-                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
-                                <li>Dishes and silverware</li>
-                                <li>Washing machine and dryer</li>
-                                <li>Smart TV</li>
-                                <li>Wifi</li>
+                                <li>memory foam mattresses, linens</li>
+                                <li>duvets, pillows, blankets</li>
+                                <li>closets, hangers, luggage racks</li>
+                                <li>room-darkening shades</li>
+                                <li>iron, ironing board</li>
+                                <li>nightstands, tissues, lamps</li>
                             </ul>
                         </article>
                     </div>
@@ -162,12 +160,9 @@ const Property1 = () => {
                     <div className="collapse-content">
                         <article className="prose">
                             <ul>
-                                <li>Essentials: Towels, linens, pillows, toilet paper</li>
-                                <li>Cooking basics: Pots, pans, oil, salt and pepper</li>
-                                <li>Dishes and silverware</li>
-                                <li>Washing machine and dryer</li>
-                                <li>Smart TV</li>
-                                <li>Wifi</li>
+                                <li>private entrance, off-street parking</li>
+                                <li>washing machine, dryer, detergent</li>
+                                <li>fire extinguisher, smoke & CO detectors</li>
                             </ul>
                         </article>
                     </div>

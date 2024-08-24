@@ -180,7 +180,7 @@ const Property1 = () => {
                     <p>
                     Gatewood is a serene neighborhood with lush greenery, abundant parks and cafes, 
                     and stunning views of the Puget Sound and Downtown Seattle. The quiet neighborhood 
-                    is a walker's delight with multiple parks and coffee shops like Nos Nos, Realfine, and Cafe 
+                    is a walker&apos;s delight with multiple parks and coffee shops like Nos Nos, Realfine, and Cafe 
                     Ladro within easy walking distance.
                     </p>
 

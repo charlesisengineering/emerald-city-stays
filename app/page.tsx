@@ -8,10 +8,12 @@ import Footer from "@/components/Footer";
 import Property1 from "@/components/Property1";
 import Property2 from "@/components/Property2";
 import Property3 from "@/components/Property3";
+import { renderSchemaTags } from "@/libs/seo";
 
 export default function Home() {
   return (
     <>
+    {renderSchemaTags()}
       <Suspense>
         <Header />
       </Suspense>

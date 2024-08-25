@@ -52,8 +52,7 @@ const Property1 = () => {
                         sandbox="allow-top-navigation allow-scripts allow-same-origin"
                         style={{ width: '320px', height: '900px' }}
                         frameBorder="0"
-                        src="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/493270"
-                        // src="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/1198778"
+                        src="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/1198778"
                         
                     />  
                 </div>

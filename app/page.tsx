@@ -20,7 +20,7 @@ export default function Home() {
       <main>
         <Hero />
         <Properties />
-        <Property1 />
+        {/* <Property1 /> */}
         {/* <Property2 />
         <Property3 />
         <FAQ />

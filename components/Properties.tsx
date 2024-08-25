@@ -23,7 +23,7 @@ const Properties = () => {
         </div>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        < PropertyCard href="/#Property1" title="Sound Breeze" imageSrc={image1}/>
+        < PropertyCard href="/listings/sound-breeze" title="Sound Breeze" imageSrc={image1}/>
         < PropertyCard href="/#Property2" title="Songbird Suite" imageSrc={image2}/>
         < PropertyCard href="/#Property3" title="Launchpad" imageSrc={image3}/>
     </div>

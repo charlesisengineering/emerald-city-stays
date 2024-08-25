@@ -22,12 +22,13 @@ const Property1 = () => {
     ];
 
   return (
-    <section data-theme="mybrand" className="bg-base-100 overflow-hidden" id="Property1">
+    // TODO use typography for all of this stuff
+    <section data-theme="mybrand" className="bg-base-100 overflow-hidden" id="Property1"> 
       <div className="py-8 px-8 max-w-5xl mx-auto">
-        <div className="flex flex-col mt-20 text-center w-full gap-10">
-          <h2 className="font-bold text-3xl text-primary lg:text-5xl tracking-tight">
+        <div className="flex flex-col mt-10 text-center w-full gap-10">
+          <h1 className="font-bold text-3xl text-primary lg:text-6xl tracking-tight">
             {propertyName}
-          </h2>
+          </h1>
           <p className="font-medium  mb-8">Kick back and relax in this newly renovated guest suite. 
             The serene Gatewood neighborhood features stunning Puget Sound views, an abundance of 
             walkable cafes, restaurants, and parks, and convenient access to the Morgan Junction, Lincoln Park, or Downtown Seattle.</p>
@@ -35,11 +36,11 @@ const Property1 = () => {
       </div>
 
         {/* Container with flexbox layout */}
-        <div className="flex bg-base-100 p-4">
+        <div className="flex bg-base-100 p-4 max-w-screen-xl" style={{ margin: '0 auto' }}>
             <div className="grid grid-cols-1 md:grid-cols-[1fr,350px] gap-4">
                 
                 {/* Picture slideshow */}
-                <div className="flex justify-center md:overflow-hidden"> {/* TODO learn why overflow-hidden fixes layouts with two columns, breaks those with one column*/}
+                <div className="flex justify-center md:overflow-hidden mb-10"> {/* TODO learn why overflow-hidden fixes layouts with two columns, breaks those with one column*/}
                     <div className="w-11/12">
                             <PictureSlideshow images={images}/>
                     </div>
@@ -50,7 +51,7 @@ const Property1 = () => {
                     <iframe
                         id="booking-iframe"
                         sandbox="allow-top-navigation allow-scripts allow-same-origin"
-                        style={{ width: '320px', height: '900px' }}
+                        style={{ width: '320px', height: '750px' }}
                         frameBorder="0"
                         src="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/1198778"
                         
@@ -59,7 +60,7 @@ const Property1 = () => {
             </div>
         </div>
 
-        <div className="grid grid-cols-1 mx-auto md:grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-1 mx-auto md:grid-cols-2 gap-4 max-w-screen-xl">
             <div className="flex justify-center p-4 lg:p-10">
                 <article className="prose lg:prose-l">
                     <h3> About the property</h3>
@@ -172,7 +173,7 @@ const Property1 = () => {
 
         </div>
 
-        <div className="grid grid-cols-1 mx-auto md:grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-1 mx-auto md:grid-cols-2 gap-4 max-w-screen-xl">
             <div className="flex justify-center p-4 lg:p-10">
                 <article className="prose lg:prose-l">
                     <h3> About the Neighborhood</h3>
@@ -195,11 +196,17 @@ const Property1 = () => {
                 <article className="prose lg:prose-l">
                     <h3>House Rules</h3>
                     <p>
-                    Lorem ipsum
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                    deserunt mollit anim id est laborum.
                     </p>
 
                     <p>
-                    The quick brown fox jumped over the lazy dog.
+                    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. 
+                    The quick brown fox jumps over the lazy dog.
                     </p>
                 </article>
             </div>

@@ -1,8 +1,9 @@
+// Launchpad PropertyPage
 import { Suspense } from 'react'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
-// import { renderSchemaTags } from "@/libs/seo";
+import { renderSchemaTags } from "@/libs/seo";
 import React from 'react';
 import image1 from '@/app/LaunchpadPhotos/living.jpeg'
 import image2 from '@/app/LaunchpadPhotos/king.jpeg'
@@ -10,8 +11,9 @@ import image3 from '@/app/LaunchpadPhotos/kitchen.jpeg'
 import image4 from '@/app/LaunchpadPhotos/bathroom.jpeg'
 import { amenitiesList } from "@/types/userTypes";
 
-export default function Home() {
+export default function launchpadPropertyPage() {
 
+    // assemble an array of images to use in the Carousel. Eventually do this a cooler way?
     const images = [
         image1,
         image2,
@@ -20,8 +22,6 @@ export default function Home() {
     ];
 
     // create an instance of an amenitiesList to pass to propertyAmenities below
-
-
     const launchpadAmenities: amenitiesList = {
         basicAmenities: ['Fully stocked kitchen',
             'washing machine, dryer', 
@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <>
-    {/* {renderSchemaTags()} */}
+    {renderSchemaTags()}
       <Suspense>
         <Header />
       </Suspense>

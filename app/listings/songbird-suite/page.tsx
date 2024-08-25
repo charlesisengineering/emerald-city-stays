@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import { renderSchemaTags } from "@/libs/seo";
 import React from 'react';
-import image1 from '@/app/SongbirdPhotos/living.jpeg';
-import image2 from '@/app/SongbirdPhotos/king3.jpeg';
-import image3 from '@/app/SongbirdPhotos/kitchen.jpeg';
+import image1 from '@/app/SongbirdPhotos/king3.jpeg';
+import image2 from '@/app/SongbirdPhotos/kitchen.jpeg';
+import image3 from '@/app/SongbirdPhotos/living.jpeg';
 import image4 from '@/app/SongbirdPhotos/bathroom.jpeg';
 import { amenitiesList } from "@/types/userTypes";
 
@@ -73,11 +73,11 @@ export default function songbirdPropertyPage() {
             The home itself is older and sound travels fairly well, which makes it ideal for groups who are happy to relax 
             quietly once quiet hours begin. The tenants upstairs are young professionals and are generally in bed early.'
             propertyAmenities={songbirdAmenities}
-            propertyDescription='This spacious recently renovated 1100 sqft Highline mother-in-law invites you to 
-            relax after a day of exploring Seattle. Centrally located between SeaTac Airport and Downtown Seattle, 
-            you&apos;ll be just a short drive from everything the Emerald City has to offer. The private suite accommodates 
-            4 guests with plenty of space to stretch out, super-fast internet, air conditioning, two workstations 
-            for remote workers, a new 58" smart TV, and a full kitchen for preparing meals.' 
+            propertyDescription='This spacious newly renovated 1100 sqft Maple Leaf mother-in-law invites you to relax 
+            after a day of exploring Seattle. Located just North of the heart of the city this suite offers convenient 
+            access to the heart of Seattle with just one bus ride from a stop a block away. The private suite accommodates 
+            4 guests with plenty of space to stretch out, super-fast fiber internet, a new 65" smart TV, and a brand new 
+            kitchen for preparing meals.'
             neighborhoodDescription='Maple Leaf provides a tranquil environment just north of the center of Seattle with 
             plenty of cool eateries and easy access to the developing Northgate area.
             

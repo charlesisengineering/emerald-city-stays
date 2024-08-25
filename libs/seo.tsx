@@ -82,29 +82,29 @@ export const renderSchemaTags = () => {
       dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "http://schema.org",
-          "@type": "SoftwareApplication",
+          "@type": "Local Business",
           name: config.appName,
           description: config.appDescription,
           image: `https://${config.domainName}/icon.png`,
           url: `https://${config.domainName}/`,
           author: {
             "@type": "Person",
-            name: "Marc Lou",
+            name: "Charles Alexander",
           },
-          datePublished: "2023-08-01",
+          datePublished: "2024-08-24",
           applicationCategory: "EducationalApplication",
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "12",
-          },
-          offers: [
-            {
-              "@type": "Offer",
-              price: "9.00",
-              priceCurrency: "USD",
-            },
-          ],
+        //   aggregateRating: {
+        //     "@type": "AggregateRating",
+        //     ratingValue: "4.8",
+        //     ratingCount: "12",
+        //   },
+        //   offers: [
+        //     {
+        //       "@type": "Offer",
+        //       price: "9.00",
+        //       priceCurrency: "USD",
+        //     },
+        //   ],
         }),
       }}
     ></script>

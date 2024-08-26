@@ -1,19 +1,101 @@
+// Sound Breeze PropertyPage
 import { Suspense } from 'react'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Property1 from "@/components/Property1";
-// import { renderSchemaTags } from "@/libs/seo";
+import PropertyPage from "@/components/PropertyPage";
+import { renderSchemaTags } from "@/libs/seo";
 import React from 'react';
+import image1 from '@/app/SoundBreezePhotos/entry.jpg'
+import image2 from '@/app/SoundBreezePhotos/king_bed.jpg'
+import image3 from '@/app/SoundBreezePhotos/kitchen_dining.jpg'
+import image4 from '@/app/SoundBreezePhotos/bathroom.jpg'
+import image5 from '@/app/SoundBreezePhotos/seating.jpg'
+import { amenitiesList } from "@/types/userTypes";
 
-export default function Home() {
+export default function soundBreezePropertyPage() {
+
+    // assemble an array of images to use in the Carousel. Eventually do this a cooler way?
+    const images = [
+        image1,
+        image2,
+        image3,
+        image4,
+        image5
+    ];
+
+    // create an instance of an amenitiesList to pass to propertyAmenities below
+    const soundBreezeAmenities: amenitiesList = {
+        basicAmenities: ['Fully stocked kitchen',
+            'washing machine, dryer', 
+            'smart TV, couch, coffee table', 
+            'high-speed WiFi, office with workstation', 
+            'towels, linens, pillows, toilet paper'
+        ],
+        kitchenAndDining: ['Stove, oven, dishwasher, microwave', 
+            'full refrigerator & freezer',
+            'pots, pans, oil, seasonings',
+            'dishes, silverware, paper towels',
+            'coffee, coffee maker, electric kettle', 
+            'toaster, dining table'
+        ],
+        bathroom: ['Shower, bathtub, bath mat',
+            'body wash, shampoo, conditioner', 
+            'blow dryer, black makeup towels',
+            'towels, hand towels, toilet paper',
+            'cotton balls, hand soap'
+        ],
+        bedroom: ['Memory foam mattresses, linens',
+            'duvets, pillows, blankets',
+            'closets, hangers, luggage racks',
+            'room-darkening shades',
+            'iron, ironing board',
+            'nightstands, tissues, lamps'
+        ],
+        additional: ['Private entrance, off-street parking',
+            'washing machine, dryer, detergent',
+            'fire extinguisher, smoke & CO detectors'
+        ],
+      }
+
   return (
     <>
-    {/* {renderSchemaTags()} */}
+    {renderSchemaTags()}
       <Suspense>
         <Header />
       </Suspense>
       <main>
-        <Property1 />
+        <PropertyPage 
+            propertyName='Sound Breeze' 
+            propertyProse='The guest suite is located on the basement floor of a detached home, 
+                and is completely seperate from the unit above. The entrance opens to a 
+                stylish, newly renovated kitchen, a living space with West Elm furnishings 
+                and a smart TV, and a dining set for four. The kitchen is fully stocked with 
+                everything you need to cook during your stay, as well as coffee and tea 
+                supplies. The suite has two cozy bedrooms - the first features a king bed 
+                and the second has two twin beds. The bathroom is also newly renovated and 
+                features a tile shower surround and full sized bathtub. A laundry room and 
+                an office with a workstation round out the unit, and fiber optic internet 
+                ensures a reliable and high performance connection for guests looking to 
+                stream or work remotely during their stay.
+
+                Although this unit it freshly renovated, the home itself is older and sound 
+                travels fairly well. This makes this unit ideal for groups who are happy 
+                to relax quietly once quiet hours begin. The tenants upstairs are young 
+                professionals and are generally in bed early.'
+            propertyAmenities={soundBreezeAmenities}
+            propertyDescription='Kick back and relax in this newly renovated guest suite. 
+                The serene Gatewood neighborhood features stunning Puget Sound views, an abundance of 
+                walkable cafes, restaurants, and parks, and convenient access to the Morgan Junction, Lincoln Park, or Downtown Seattle.'
+            neighborhoodDescription='Gatewood is a serene neighborhood with lush greenery, abundant parks and cafes, 
+                and stunning views of the Puget Sound and Downtown Seattle. The quiet neighborhood 
+                is a walker&apos;s delight with multiple parks, coffee shops and restaurants within easy walking distance.
+
+                The West Seattle Junction is a short bus ride away on the 128 line and Downtown 
+                Seattle is just 20 minutes away on the 21 bus - both stops are less than two 
+                blocks away. Finally, for guests with cars we offer safe off street parking and a 
+                15 minute drive to Downtown Seattle.'
+            carouselImages={images}
+            bookingWidget="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/1198778"/>
       </main>
       <Footer />
     </>

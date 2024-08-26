@@ -45,28 +45,26 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
         </div>
       </div>
 
+        {/* ~~~~~~~~~~~~~~~ TODO: COMPARE THIS IMPLEMENTATION TO SOUND BREEZE, LEARN WHY THIS WORKS AND SB DOESNT~~~~~~~~~~~~~~~~~~~~~~ */}
         {/* Container with flexbox layout */}
-        <div className="flex bg-base-100 p-4 max-w-screen-xl" style={{ margin: '0 auto' }}>
-            <div className="grid grid-cols-1 md:grid-cols-[1fr,350px] gap-4">
-                
-                {/* Picture slideshow */}
-                <div className="flex justify-center md:overflow-hidden mb-10"> {/* TODO learn why overflow-hidden fixes layouts with two columns, breaks those with one column*/}
-                    <div className="w-11/12">
-                            <PictureSlideshow images={carouselImages}/>
-                    </div>
-                </div>
+        <div className="flex flex-col md:flex-row bg-base-100 p-4 lg:p-10 max-w-screen-xl mx-auto">
 
-                {/* Booking iframe */}
-                <div className="flex justify-center items-center">
-                    <iframe
-                        id="booking-iframe"
-                        sandbox="allow-top-navigation allow-scripts allow-same-origin"
-                        style={{ width: '320px', height: '750px' }}
-                        frameBorder="0"
-                        src={bookingWidget}
-                        
-                    />  
+            {/* Picture slideshow */}
+            <div className="flex justify-center mb-10 md:mb-0 md:w-2/3">
+                <div className="w-full">
+                <PictureSlideshow images={carouselImages} />
                 </div>
+            </div>
+
+            {/* Booking iframe */}
+            <div className="flex justify-center items-center md:w-1/3">
+                <iframe
+                id="booking-iframe"
+                sandbox="allow-top-navigation allow-scripts allow-same-origin"
+                style={{ width: '320px', height: '750px' }}
+                frameBorder="0"
+                src={bookingWidget}
+                />
             </div>
         </div>
 

@@ -60,6 +60,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
             <div className="flex justify-center items-center md:w-1/3">
                 <iframe
                 id="booking-iframe"
+                title="Booking Widget"
                 sandbox="allow-top-navigation allow-scripts allow-same-origin"
                 style={{ width: '320px', height: '750px' }}
                 frameBorder="0"
@@ -80,7 +81,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
 
             <div className="grid grid-cols-1 justify-center p-4 lg:p-10">
                 <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" defaultChecked />
+                    <input type="radio" name="amenities-accordion-1" aria-label="Expand Basic Amenities" defaultChecked />
                     <div className="collapse-title text-xl font-medium">Basic Amenities</div>
                     <div className="collapse-content">
                         <article className="prose">
@@ -94,7 +95,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                 </div>
 
                 <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" />
+                    <input type="radio" name="amenities-accordion-2" aria-label="Expand Kitchen and Dining Amenities"/>
                     <div className="collapse-title text-xl font-medium">Kitchen and Dining Amenities</div>
                     <div className="collapse-content">
                         <article className="prose">
@@ -108,7 +109,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                 </div>
 
                 <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" />
+                    <input type="radio" name="amenities-accordion-3" aria-label="Expand Bathroom Amenities"/>
                     <div className="collapse-title text-xl font-medium">Bathroom Amenities</div>
                     <div className="collapse-content">
                         <article className="prose">
@@ -122,7 +123,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                 </div>
 
                 <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" />
+                    <input type="radio" name="amenities-accordion-4" aria-label="Expand Bedroom Amenities"/>
                     <div className="collapse-title text-xl font-medium">Bedroom Amenities</div>
                     <div className="collapse-content">
                         <article className="prose">
@@ -136,7 +137,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                 </div>
 
                 <div className="collapse collapse-plus bg-base-200">
-                    <input type="radio" name="my-accordion-3" />
+                    <input type="radio" name="amenities-accordion-5" aria-label="Expand Additional Amenities"/>
                     <div className="collapse-title text-xl font-medium">Additional Amenities</div>
                     <div className="collapse-content">
                         <article className="prose">

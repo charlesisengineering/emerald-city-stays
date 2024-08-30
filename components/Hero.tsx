@@ -11,13 +11,13 @@ const Hero = () => {
           Feel at home in the PNW
         </h1>
         <p className="text-lg opacity-80 leading-relaxed">
-          Stylish and comfortable short-term rentals for your next Seattle adventure
+          Find a stylish and comfortable short-term rental for your next Seattle adventure
         </p>
       </div>
       <div className="lg:w-full">
         <Image
           src={image}
-          alt="Product Demo"
+          alt="Welcome to your home away from home"
           className="w-full"
           priority={true}
           width={500}

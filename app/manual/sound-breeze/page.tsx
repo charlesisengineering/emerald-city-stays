@@ -12,17 +12,6 @@ import image5 from '@/app/SoundBreezePhotos/seating.jpg'
 
 export default function soundBreezeManual() {
 
-    // assemble an array of images to use in the Carousel. Eventually do this a cooler way?
-    const images = [
-        image1,
-        image2,
-        image3,
-        image4,
-        image5
-    ];
-
-    
-
   return (
     <>
     {renderSchemaTags()}
@@ -76,6 +65,11 @@ export default function soundBreezeManual() {
                                 someone is home and in the same room. If the unit is still too cold for your liking 
                                 please contact your host, who can bump up the thermostat that services the entire house.
                             </p>
+                        <h3>Safety</h3>
+                        <p>The home is equipped with smoke and CO detectors. Under the kitchen sink you'll find a fire 
+                            extinguisher and a fire blanket that can be used to extinguish grease fires. Please take a 
+                            moment to familiarize yourself with them as you settle in.
+                        </p>
                         <h3>Smart TV and Accounts</h3>
                             <p>A smart TV in the living room is available to guests. An Amazon Prime Video account and 
                                 a Netflix account are linked and an antenna is connected for local broadcast TV. Guests 
@@ -131,8 +125,18 @@ export default function soundBreezeManual() {
                         <p>The property is non-smoking. If you wish to smoke, please do so at the alley in the back.</p>
                         <h3>Check In and Out Times</h3>
                         <p>Check-in begins at 3 PM on your arrival date and check-out is at 10 AM.</p>
-                    <h2>Getting Around</h2>
-                    <h2>Things to Do</h2>
+                    <h2>Getting Around the Area</h2>
+                    <p>The Gatewood neighborhood provides some fantastic businesses and points of interest within 
+                        walking distance. The Myrtle Street Reservoir Park is a great place to stretch your legs and 
+                        the intersection of SW Willow Street and 38th Ave SW is a local favorite for watching incredible
+                        sunsets over the Puget Sound. QED Coffee is a short walk to the Northeast and the Morgan Junction
+                        to the West has a grocery store and a selction of bars, restaurants, and other businesses. </p>
+                        <p>A bit further afield, Lincoln Park to the Southwest provides great trails, access to the Puget
+                            Sound, and even some Redwoods and Giant Sequoias! The 21 bus is a great way to get into 
+                            Downtown Seattle and has a stop about one block away, on 35th Ave SW and SW Holly St. The 128
+                            bus will take you directly to the Alaska Junction, which is the heart of West Seattle. The stop
+                            for the 128 bus is about two blocks away on Morgan and 35th Ave SW.
+                        </p>
                     <h2>Checking Out</h2>
                     <p>We appreciate you choosing to book your stay with us and we want your stay to feel like vacation up 
                         to the very last minute. We ask that you leave the unit in a reasonably tidy condition and return 

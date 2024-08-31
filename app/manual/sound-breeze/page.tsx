@@ -52,6 +52,7 @@ export default function soundBreezeManual() {
                             Please lock the door after yourself when leaving the guest suite by pressing the lock 
                             button on the bottom right.
                         </p>
+
                     <h2>Useful Info</h2>
                         <h3>Wifi Info</h3>
                             <ul>
@@ -66,8 +67,8 @@ export default function soundBreezeManual() {
                                 please contact your host, who can bump up the thermostat that services the entire house.
                             </p>
                         <h3>Safety</h3>
-                        <p>The home is equipped with smoke and CO detectors. Under the kitchen sink you'll find a fire 
-                            extinguisher and a fire blanket that can be used to extinguish grease fires. Please take a 
+                        <p>The home is equipped with smoke and CO detectors. Under the kitchen sink you&apos;ll find a fire 
+                            extinguisher and a Prepared Hero fire blanket that can be used to extinguish grease fires. Please take a 
                             moment to familiarize yourself with them as you settle in.
                         </p>
                         <h3>Smart TV and Accounts</h3>
@@ -109,7 +110,7 @@ export default function soundBreezeManual() {
                         <p>Please lock the door by pressing the lock icon on the smart lock upon leaving the unit.</p>
                         <h3>Laundry</h3>
                         <p>Detergent pods will be left out in a small wooden bowl for you to use during your stay. 
-                            If you need more detergent please get in touch with your host. Please clean the dryer's lint
+                            If you need more detergent please get in touch with your host. Please clean the dryer&apos;s lint
                             filter before each use, it can be found on the top of the dyer.</p>
                         <h3>Waste Disposal</h3>
                         <p>The kitchen trash can has seperate bins for trash and recycling. Please separate trash and 
@@ -125,6 +126,7 @@ export default function soundBreezeManual() {
                         <p>The property is non-smoking. If you wish to smoke, please do so at the alley in the back.</p>
                         <h3>Check In and Out Times</h3>
                         <p>Check-in begins at 3 PM on your arrival date and check-out is at 10 AM.</p>
+
                     <h2>Getting Around the Area</h2>
                     <p>The Gatewood neighborhood provides some fantastic businesses and points of interest within 
                         walking distance. The Myrtle Street Reservoir Park is a great place to stretch your legs and 
@@ -137,12 +139,13 @@ export default function soundBreezeManual() {
                             bus will take you directly to the Alaska Junction, which is the heart of West Seattle. The stop
                             for the 128 bus is about two blocks away on Morgan and 35th Ave SW.
                         </p>
+
                     <h2>Checking Out</h2>
                     <p>We appreciate you choosing to book your stay with us and we want your stay to feel like vacation up 
                         to the very last minute. We ask that you leave the unit in a reasonably tidy condition and return 
-                        any furnishings that were moved during the stay to their original position. Beyond that we don’t 
+                        any furnishings that were moved during the stay to their original position. Beyond that we don&apos;t 
                         require any chores for guests checking out. </p>
-                    <p>If you return to the area again we’d love to earn your repeat business! Repeat guests can book directly 
+                    <p>If you return to the area again we&apos;d love to earn your repeat business! Repeat guests can book directly 
                         with us for significant discounts to sites like Airbnb and Vrbo. Please click the link below to check 
                         availability at our properties for your next visit!</p>
                     <a href="https://emeraldcitystays.com">emeraldcitystays.com</a>

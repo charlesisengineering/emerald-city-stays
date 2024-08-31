@@ -60,8 +60,8 @@ const TOS = () => {
             <article className="prose lg:prose-l">
                 <h2>Terms of Service</h2>
                 <p>Effective Date: August 30, 2024</p>
-                <p>Welcome to EmeraldCityStays! By accessing or using our website, https://emeraldcitystays.com (the "Site"), you agree to 
-                    comply with and be bound by the following terms and conditions (the "Terms"). Please read them carefully.
+                <p>Welcome to EmeraldCityStays! By accessing or using our website, https://emeraldcitystays.com (the &quot;Site&quot;), you agree to 
+                    comply with and be bound by the following terms and conditions (the &quot;Terms&quot;). Please read them carefully.
                 </p>
                 <h2>Services Provided </h2>
                 <p>EmeraldCityStays provides guests with furnished rental properties in the Seattle area.</p>

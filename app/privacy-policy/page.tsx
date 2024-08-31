@@ -61,7 +61,7 @@ const PrivacyPolicy = () => {
                 <p>Effective Date: August 30, 2024</p>
 
                 <p>Welcome to Emerald City Stays. This Privacy Policy outlines how we collect, use, and protect your personal information 
-                    when you use our website, https://emeraldcitystays.com (the "Site").</p>
+                    when you use our website, https://emeraldcitystays.com (the &quot;Site&quot;).</p>
                 <h2>Information We Collect</h2>
                 <ul>
                     <li>Personal Information: We collect your name, email address, and payment information when you make a booking or contact us.
@@ -72,7 +72,7 @@ const PrivacyPolicy = () => {
                 <p>We use your personal information for order processing and first-party marketing purposes.</p>
                 <h2>Data Sharing</h2>
                 <p>We do not share your personal information with any third parties.</p>
-                <h2>Children’s Privacy</h2>
+                <h2>Children&apos;s Privacy</h2>
                 <p>We do not collect any data from children under the age of 13.</p>
                 <h2>Updates to Privacy Policy</h2>
                 <p>We may update this Privacy Policy periodically. Any changes will be communicated to you via email.</p>

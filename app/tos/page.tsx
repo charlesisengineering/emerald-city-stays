@@ -57,39 +57,29 @@ const TOS = () => {
           className="leading-relaxed whitespace-pre-wrap"
           style={{ fontFamily: "sans-serif" }}
         >
-          {`Last Updated: September 26, 2023
-
-Welcome to ShipFast!
-
-These Terms of Service ("Terms") govern your use of the ShipFast website at https://shipfa.st ("Website") and the services provided by ShipFast. By using our Website and services, you agree to these Terms.
-
-1. Description of ShipFast
-
-ShipFast is a platform that offers a JavaScript code boilerplate to assist entrepreneurs in launching their startups more efficiently.
-
-2. Ownership and Usage Rights
-
-When you purchase a package from ShipFast, you gain the right to download and use the code provided for creating applications. You own the code you create but do not have the right to resell it. We offer a full refund within 7 days of purchase, as specified in our refund policy.
-
-3. User Data and Privacy
-
-We collect and store user data, including name, email, and payment information, as necessary to provide our services. For details on how we handle your data, please refer to our Privacy Policy at https://shipfa.st/privacy-policy.
-
-4. Non-Personal Data Collection
-
-We use web cookies to collect non-personal data for the purpose of improving our services and user experience.
-
-5. Governing Law
-
-These Terms are governed by the laws of France.
-
-6. Updates to the Terms
-
-We may update these Terms from time to time. Users will be notified of any changes via email.
-
-For any questions or concerns regarding these Terms of Service, please contact us at marc@shipfa.st.
-
-Thank you for using ShipFast!`}
+            <article className="prose lg:prose-l">
+                <h2>Terms of Service</h2>
+                <p>Effective Date: August 30, 2024</p>
+                <p>Welcome to EmeraldCityStays! By accessing or using our website, https://emeraldcitystays.com (the "Site"), you agree to 
+                    comply with and be bound by the following terms and conditions (the "Terms"). Please read them carefully.
+                </p>
+                <h2>Services Provided </h2>
+                <p>EmeraldCityStays provides guests with furnished rental properties in the Seattle area.</p>
+                <h2>User Data</h2>
+                <p>We collect personal information such as your name, email address, and payment information. We also collect non-personal 
+                    data through web cookies to improve your experience. For details on how we handle your personal information, please 
+                    refer to our Privacy Policy.</p>
+                <h2>Booking and Cancellation Policy</h2>
+                <p>Bookings are subject to the cancellation policy in place at the time of the booking. This policy will be shown to you 
+                    for review before completing your booking.</p>
+                <h2>Governing Law</h2>
+                <p>These Terms are governed by the laws of the United States.</p>
+                <h2>Updates to Terms</h2>
+                <p>We may update these Terms from time to time. Any changes will be communicated to you via email.</p>
+                <h2>Contact Information</h2>
+                <p>If you have any questions or concerns regarding these Terms, please contact us at charles@emeraldcitystays.com.</p>
+                <p>By using our Site, you acknowledge that you have read, understood, and agree to these Terms.</p>
+            </article>
         </pre>
       </div>
     </main>

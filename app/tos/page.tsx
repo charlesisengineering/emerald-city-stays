@@ -75,7 +75,7 @@ const TOS = () => {
                 <h2>Governing Law</h2>
                 <p>These Terms are governed by the laws of the United States.</p>
                 <h2>Updates to Terms</h2>
-                <p>We may update these Terms from time to time. Any changes will be communicated to you via email.</p>
+                <p>We may update these Terms from time to time. Any updates will be posted on this page, and we may notify you via email about significant changes.</p>
                 <h2>Contact Information</h2>
                 <p>If you have any questions or concerns regarding these Terms, please contact us at charles@emeraldcitystays.com.</p>
                 <p>By using our Site, you acknowledge that you have read, understood, and agree to these Terms.</p>

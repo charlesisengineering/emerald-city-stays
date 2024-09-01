@@ -75,7 +75,7 @@ const PrivacyPolicy = () => {
                 <h2>Children&apos;s Privacy</h2>
                 <p>We do not collect any data from children under the age of 13.</p>
                 <h2>Updates to Privacy Policy</h2>
-                <p>We may update this Privacy Policy periodically. Any changes will be communicated to you via email.</p>
+                <p>We may update this Privacy Policy periodically. Any updates will be posted on this page, and we may notify you via email about significant changes.</p>
                 <h2>Contact Information</h2>
                 <p>For any questions or concerns regarding this Privacy Policy, please contact us at charles@emeraldcitystays.com.</p>
                 <p>By using our Site, you consent to the collection and use of your information as described in this Privacy Policy.</p>

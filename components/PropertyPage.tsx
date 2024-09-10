@@ -5,21 +5,8 @@
 'use client'
 
 import PictureSlideshow from "./PictureSlideshow"
-import { StaticImageData } from 'next/image';
+import { PropertyPageProps } from "@/types/userTypes";
 import React from 'react'
-import { amenitiesList } from "@/types/userTypes";
-
-interface PropertyPageProps {
-    propertyName: string;
-    propertyDescription: string;
-    propertyProse: string;
-    propertyAmenities: amenitiesList;
-    neighborhoodDescription: string;
-    carouselImages: StaticImageData[]; // An array of all images to live in the carousel 
-    bookingWidget: string; // url for the booking widget, goes into the src of the iframe
-  }
-
-
 
 const PropertyPage: React.FC<PropertyPageProps> = ({
     propertyName,

@@ -18,8 +18,10 @@ export interface PropertyPageProps {
     bookingWidget: string; // url for the booking widget, goes into the src of the iframe
   }
 
-export type propertyCardLinks = {
+export type listingCardProps = {
     songbirdLink: string;
     soundBreezeLink: string;
     launchpadLink: string;
+    headlineText: string;
+    taglineText: string;
 }

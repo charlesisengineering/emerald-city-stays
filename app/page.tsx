@@ -2,8 +2,6 @@ import { Suspense } from 'react'
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Properties from "@/components/Properties";
-// import FAQ from "@/components/FAQ";
-// import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { renderSchemaTags } from "@/libs/seo";
 import React from "react";
@@ -17,7 +15,12 @@ export default function Home() {
       </Suspense>
       <main>
         <Hero />
-        <Properties />
+        <Properties 
+            songbirdLink='/listings/songbird'
+            soundBreezeLink='/listings/sound-breeze'
+            launchpadLink='/listings/launchpad'
+            headlineText='Our Properties'
+            taglineText='We&apos;ve got you covered from Shoreline to Tukwila'/>
         {/* <FAQ />
         <CTA /> */}
       </main>

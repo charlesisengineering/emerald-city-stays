@@ -19,8 +19,8 @@ const links: {
     label: "Properties",
   },
   {
-    href: "/#houseManual",
-    label: "House Manual",
+    href: "/manuals",
+    label: "House Manuals",
   },
   {
     href: "/#blog",

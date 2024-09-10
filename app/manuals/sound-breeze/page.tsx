@@ -1,7 +1,3 @@
-// Sound Breeze PropertyPage
-import { Suspense } from 'react'
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { renderSchemaTags } from "@/libs/seo";
 import React from 'react';
 import rearImage from '@/app/SoundBreezePhotos/rear.jpg'
@@ -14,9 +10,6 @@ export default function soundBreezeManual() {
   return (
     <>
     {renderSchemaTags()}
-      <Suspense>
-        <Header />
-      </Suspense>
       <main data-theme="mybrand">
         <div className='flex bg-base-100 max-w-screen-xl mx-auto p-4 lg:p-10'>
             <article className="prose lg:prose-l">
@@ -153,7 +146,6 @@ export default function soundBreezeManual() {
             </article>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

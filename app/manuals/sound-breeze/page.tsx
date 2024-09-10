@@ -11,8 +11,8 @@ export default function soundBreezeManual() {
     <>
     {renderSchemaTags()}
       <main data-theme="mybrand">
-        <div className='flex bg-base-100 max-w-screen-xl mx-auto p-4 lg:p-10'>
-            <article className="prose lg:prose-l">
+        <div className='flex bg-base-100 max-w-screen-lg mx-auto p-4 lg:p-10'>
+            <article className="prose max-w-none lg:prose-l">
                 <h1>Sound Breeze House Manual</h1>
                     <h2>Getting Here</h2>
                         <p>

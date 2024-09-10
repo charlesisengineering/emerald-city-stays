@@ -26,34 +26,34 @@ export default function soundBreezePropertyPage() {
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const soundBreezeAmenities: amenitiesList = {
         basicAmenities: ['Fully stocked kitchen',
-            'washing machine, dryer', 
-            'smart TV, couch, coffee table', 
-            'high-speed WiFi, office with workstation', 
-            'towels, linens, pillows, toilet paper'
+            'Washing machine, dryer', 
+            'Smart TV, couch, coffee table', 
+            'High-speed WiFi, office with workstation', 
+            'Towels, linens, pillows, toilet paper'
         ],
         kitchenAndDining: ['Stove, oven, dishwasher, microwave', 
-            'full refrigerator & freezer',
-            'pots, pans, oil, seasonings',
-            'dishes, silverware, paper towels',
-            'coffee, coffee maker, electric kettle', 
-            'toaster, dining table'
+            'Full-size refrigerator & freezer',
+            'Pots, pans, oil, seasonings',
+            'Dishes, silverware, paper towels',
+            'Coffee, coffee maker, electric kettle', 
+            'Toaster, dining table'
         ],
         bathroom: ['Shower, bathtub, bath mat',
-            'body wash, shampoo, conditioner', 
-            'blow dryer, black makeup towels',
-            'towels, hand towels, toilet paper',
-            'cotton balls, hand soap'
+            'Body wash, shampoo, conditioner', 
+            'Blow dryer, black makeup towels',
+            'Towels, hand towels, toilet paper',
+            'Cotton balls, hand soap'
         ],
         bedroom: ['Memory foam mattresses, linens',
-            'duvets, pillows, blankets',
-            'closets, hangers, luggage racks',
-            'room-darkening shades',
-            'iron, ironing board',
-            'nightstands, tissues, lamps'
+            'Duvets, pillows, blankets',
+            'Closets, hangers, luggage racks',
+            'Room-darkening shades',
+            'Iron, ironing board',
+            'Nightstands, tissues, lamps'
         ],
         additional: ['Private entrance, off-street parking',
-            'washing machine, dryer, detergent',
-            'fire extinguisher, smoke & CO detectors'
+            'Washing machine, dryer, detergent',
+            'Fire extinguisher, smoke & CO detectors'
         ],
       }
 

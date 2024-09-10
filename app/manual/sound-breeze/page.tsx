@@ -4,11 +4,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { renderSchemaTags } from "@/libs/seo";
 import React from 'react';
-import image1 from '@/app/SoundBreezePhotos/rear.jpg'
-import image2 from '@/app/SoundBreezePhotos/entry_door.jpg'
-import image3 from '@/app/SoundBreezePhotos/kitchen_dining.jpg'
-import image4 from '@/app/SoundBreezePhotos/bathroom.jpg'
-import image5 from '@/app/SoundBreezePhotos/seating.jpg'
+import rearImage from '@/app/SoundBreezePhotos/rear.jpg'
+import entryImage from '@/app/SoundBreezePhotos/entry_door.jpg'
+import trashImage from '@/app/SoundBreezePhotos/trash.jpeg'
+import lockImage from '@/app/SoundBreezePhotos/lock.jpg'
 
 export default function soundBreezeManual() {
 
@@ -31,14 +30,14 @@ export default function soundBreezeManual() {
                         </p>
 
                         {/* TODO Should we be using the Next.js Image class here? */}
-                        <img src={image1.src} alt="Entry"/>
+                        <img src={rearImage.src} alt="View of Sound Breeze from alley"/>
                     
                         <p>
                             Head around the right side of the house to the orange door to gain entry into the 
                             guest suite!    
                         </p>
 
-                        <img src={image2.src} alt="Entry Door"/>
+                        <img src={entryImage.src} alt="Entry Door"/>
 
                     <h2>Checking In</h2>
                         <p>
@@ -52,6 +51,7 @@ export default function soundBreezeManual() {
                             Please lock the door after yourself when leaving the guest suite by pressing the lock 
                             button on the bottom right.
                         </p>
+                        <img className ='max-w-xs object-cover' src={lockImage.src} alt='Sound Breeze smart lock' />
 
                     <h2>Useful Info</h2>
                         <h3>Wifi Info</h3>
@@ -121,6 +121,7 @@ export default function soundBreezeManual() {
                             <li>Blue: clean and dry recyclable waste (paper, plastic, glass, metal without residues or 
                                 greases)</li>
                             <li>Green: industrially compostable waste (food scraps, paper products with food residue)</li>
+                        <img src={trashImage.src} alt="Trash cans at Sound Breeze"/>
                         </ul>
                         <h3>Smoking</h3>
                         <p>The property is non-smoking. If you wish to smoke, please do so at the alley in the back.</p>

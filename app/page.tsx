@@ -16,9 +16,9 @@ export default function Home() {
       <main>
         <Hero />
         <Properties 
-            songbirdLink='/listings/songbird'
+            songbirdLink='/listings/songbird-suite'
             soundBreezeLink='/listings/sound-breeze'
-            launchpadLink='/listings/launchpad'
+            launchpadLink='/listings/seattle-launchpad'
             headlineText='Our Properties'
             taglineText='We&apos;ve got you covered from Shoreline to Tukwila'/>
         {/* <FAQ />

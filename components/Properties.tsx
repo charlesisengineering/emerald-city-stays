@@ -36,7 +36,7 @@ const Properties: React.FC<listingCardProps> = ({
             < PropertyCard href={songbirdLink}      
                 title="Songbird Suite"  
                 imageSrc={image2}
-                description='A verdant getaway in North Seattle&apos; Maple Leaf neighborhood'
+                description='A verdant getaway in North Seattle&apos;s Maple Leaf'
                 primaryBadgeHidden
                 secondaryBadgesHidden/>
             < PropertyCard href={launchpadLink}     

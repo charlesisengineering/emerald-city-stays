@@ -19,17 +19,32 @@ const Properties: React.FC<listingCardProps> = ({
     <section className="bg-base-100 overflow-hidden max-w-screen-xl" id="properties" data-theme="mybrand" style={{ margin: '0 auto' }}>
         <div className="py-8 px-8 max-w-5xl mx-auto">
             <div className="flex flex-col text-center w-full mb-10">
-                <p className="font-bold text-3xl lg:text-5xl tracking-tight text-primary mb-8">{headlineText}</p>
+                <h1 className="font-bold text-3xl lg:text-5xl tracking-tight text-primary mb-8">{headlineText}</h1>
                 <h2 className="font-medium text-xl lg:text-2xl tracking-tight">
                 {taglineText}
                 </h2>
             </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-10">
-            < PropertyCard href={soundBreezeLink}   title="Sound Breeze"    imageSrc={image1}/>
-            < PropertyCard href={songbirdLink}      title="Songbird Suite"  imageSrc={image2}/>
-            < PropertyCard href={launchpadLink}     title="Launchpad"       imageSrc={image3}/>
+        <div className="grid grid-cols-1 gap-5 px-4 md:px-0 md:grid-cols-2 md:gap-10">
+            <PropertyCard href={soundBreezeLink} 
+                title="Sound Breeze"       
+                imageSrc={image1}
+                description='A stylish West Seattle gem with all the comforts of home'
+                primaryBadgeHidden
+                secondaryBadgesHidden/>
+            < PropertyCard href={songbirdLink}      
+                title="Songbird Suite"  
+                imageSrc={image2}
+                description='A verdant getaway in North Seattle&apos; Maple Leaf neighborhood'
+                primaryBadgeHidden
+                secondaryBadgesHidden/>
+            < PropertyCard href={launchpadLink}     
+                title="Launchpad"       
+                imageSrc={image3}
+                description='Your cozy home base between SeaTac airport and Seattle'
+                primaryBadgeHidden
+                secondaryBadgesHidden/>
         </div>
 
         <div className="flex w-full h-10"/>

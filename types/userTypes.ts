@@ -25,3 +25,12 @@ export type listingCardProps = {
     headlineText: string;
     taglineText: string;
 }
+
+export interface PropertyCardProps {
+    href: string;
+    title: string;
+    description: string;
+    imageSrc: StaticImageData;
+    primaryBadgeHidden?: boolean;
+    secondaryBadgesHidden?: boolean;
+  }

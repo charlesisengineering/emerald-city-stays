@@ -84,7 +84,7 @@ export default function soundBreezeManual() {
                             guests listed on the reservation are allowed in the unit.
                         </p>
                         <h3>Sanitary Products</h3>
-                        <p>Please do not flush sanitary items or baby wipes in the toilet, even if they’re 
+                        <p>Please do not flush sanitary items or baby wipes in the toilet, even if they&apos;re 
                             advertised as flushable.</p>
                         <h3>Shower Hair Catcher</h3>
                         <p>A hair catcher is installed on the shower drain to keep it flowing well for you. Please 
@@ -92,7 +92,7 @@ export default function soundBreezeManual() {
                             simply remove the hair and replace the hair catcher if it becomes clogged during your stay.
                         </p>
                         <h3>Cooking</h3>
-                        <p>When cooking please always use the vent on the microwave. As it’s heated modern cookware 
+                        <p>When cooking please always use the vent on the microwave. As it&apos;s heated modern cookware 
                             produces particulates that may be harmful to your lungs. Warm, moist air from cooking 
                             can cause paint to blister and mold to form. Using the vent during cooking is a simple 
                             and effective way to protect human health as well as property.

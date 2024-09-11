@@ -1,33 +1,35 @@
 // PropertyCard.tsx
-import Image, { StaticImageData } from 'next/image';
+import { PropertyCardProps } from '../types/userTypes';
 import Link from 'next/link';
 import * as React from 'react';
+import Image from 'next/image';
 
-
-interface PropertyCardProps {
-  href: string;
-  title: string;
-  imageSrc: StaticImageData;
-}
-
-const PropertyCard: React.FC<PropertyCardProps> = ({ href, title, imageSrc }) => {
+const PropertyCard: React.FC<PropertyCardProps> = ({ href, title, imageSrc, description, primaryBadgeHidden, secondaryBadgesHidden}) => {
   return (
     <Link href={href}>
-      <div className="w-full h-full bg-gray-200 p-4 aspect-ratio-4/3 rounded-xl">
-        <div className="relative h-full rounded-xl overflow-hidden">
-          <Image
-            src={imageSrc}
-            alt={title}
-            className="w-full h-full object-cover"
-            priority={true}
-            width={500}
-            height={500}
-          />
-          <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-1 lg:p-2 text-white">
-            <h3 className="font-semibold text-md lg:text-lg">{title}</h3>
-          </div>
+        <div className="card card-compact bg-base-100 w-100 shadow-xl" data-theme="mybrand">
+            <figure>
+                <Image
+                    src={imageSrc}
+                    alt={title}
+                    className='w-full h-full object-cover aspect-[4/3]'
+                />
+            </figure>
+            <div className="card-body">
+                <h2 className="card-title lg:text-2xl">
+                    {title}
+                    <div className={`badge badge-primary ${primaryBadgeHidden ? 'hidden' : ''}`}>4 guests</div>
+                </h2>
+                <p className='lg:text-lg'>{description}</p>
+                <p></p>
+                <div className="card-actions justify-start">
+                    <div className={`badge bg-base-200 ${secondaryBadgesHidden ? 'hidden' : ''}`}>2 bedrooms</div>
+                    <div className={`badge bg-base-200 ${secondaryBadgesHidden ? 'hidden' : ''}`}>1 king bed</div>
+                    <div className={`badge bg-base-200 ${secondaryBadgesHidden ? 'hidden' : ''}`}>2 twin beds</div>
+                    <div className={`badge bg-base-200 ${secondaryBadgesHidden ? 'hidden' : ''}`}>1 bathroom</div>
+                </div>
+            </div>
         </div>
-      </div>
     </Link>
   );
 };

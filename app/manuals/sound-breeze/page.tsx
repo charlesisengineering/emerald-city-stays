@@ -114,8 +114,8 @@ export default function soundBreezeManual() {
                             <li>Blue: clean and dry recyclable waste (paper, plastic, glass, metal without residues or 
                                 greases)</li>
                             <li>Green: industrially compostable waste (food scraps, paper products with food residue)</li>
-                        <img src={trashImage.src} alt="Trash cans at Sound Breeze"/>
                         </ul>
+                        <img src={trashImage.src} alt="Trash cans at Sound Breeze"/>
                         <h3>Smoking</h3>
                         <p>The property is non-smoking. If you wish to smoke, please do so at the alley in the back.</p>
                         <h3>Check In and Out Times</h3>

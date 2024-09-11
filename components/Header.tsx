@@ -72,9 +72,9 @@ const Header = () => {
   const scrollDir = useScrollDirection();
 
   return (
-  <header data-theme="mybrand" className={`sticky z-50 ${ scrollDir === "down" ? "-top-20" : "top-0"} h-20 bg-base-200 transition-all duration-500`}>
+  <header data-theme="mybrand" className={`sticky z-50 ${ scrollDir === "down" ? "-top-16 md:-top-20" : "top-0"} h-16 md:h-20 bg-base-200 transition-all duration-500`}>
       <nav
-        className="container flex items-center justify-between py-4 mx-auto"
+        className="container flex items-center justify-between px-4 lg:px-0 py-4 mx-auto"
         aria-label="Global"
       >
         {/* Logo and brand name - Responsive */}
@@ -143,7 +143,7 @@ const Header = () => {
       {/* Mobile menu, show/hide based on menu state. */}
       <div className={`relative z-50 ${mobileMenuIsOpen ? "" : "hidden"}`}>
         <div
-          className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
+        className={`fixed inset-y-0 right-0 z-10 w-full px-4 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
         >
           {/* Mobile menu logo & name */}
           <div className="flex items-center justify-between">
@@ -187,7 +187,7 @@ const Header = () => {
           </div>
 
           {/* Mobile menu links */}
-          <div className="flow-root mt-6">
+          <div className="flow-root px-4 mt-6">
             <div className="py-4">
               <div className="flex flex-col gap-y-4 items-start">
                 {links.map((link) => (

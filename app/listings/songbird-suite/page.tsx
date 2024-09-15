@@ -67,13 +67,11 @@ export default function songbirdPropertyPage() {
             propertyProse='The space has been recently remodeled, making it a peaceful and beautiful retreat in the quaint 
             Maple Leaf neighborhood that&apos;s still within easy reach of the hustle and bustle the heart of Seattle. The 
             spacious new kitchen, onsite laundry, and blazing fast fiber optic internet make it a perfect choice for guests 
-            looking for a temporary home for a longer term stay. New pictures will be posted in mid-March and the unit will 
-            e available to guests again in late March. We look forward to hosting you!
-            
-            The home itself is older and sound travels fairly well, which makes it ideal for groups who are happy to relax 
-            quietly once quiet hours begin. The tenants upstairs are young professionals and are generally in bed early.'
+            looking for a temporary home for a longer term stay. The home itself is older and sound travels fairly well, 
+            which makes it ideal for groups who are happy to relax quietly once quiet hours begin. The tenants upstairs are 
+            young professionals and are generally in bed early.'
             propertyAmenities={songbirdAmenities}
-            propertyDescription='This spacious newly renovated 1100 sqft Maple Leaf mother-in-law invites you to relax 
+            propertyDescription='This spacious, recently renovated 1100 sqft Maple Leaf mother-in-law invites you to relax 
             after a day of exploring Seattle. Located just North of the heart of the city this suite offers convenient 
             access to the heart of Seattle with just one bus ride from a stop a block away. The private suite accommodates 
             4 guests with plenty of space to stretch out, super-fast fiber internet, a new 65" smart TV, and a brand new 

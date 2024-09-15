@@ -6,7 +6,7 @@
 
 import PictureSlideshow from "./PictureSlideshow"
 import { PropertyPageProps } from "@/types/userTypes";
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const PropertyPage: React.FC<PropertyPageProps> = ({
     propertyName,
@@ -18,6 +18,38 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
     bookingWidget
 }) => {
 
+
+
+    // script to pull dates selected in property search into property page
+    // because clicking on a search result redirects to the live url, this can't be debugged easily on localhost
+
+    function getQueryParams(param) {
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        return urlSearchParams.get(param);
+    }
+
+    function updateIframeSrc() {
+        const iframe = document.getElementById("booking-iframe") as HTMLIFrameElement;
+        if (!iframe) return;
+
+        const checkin = getQueryParams("checkin");
+        const checkout = getQueryParams("checkout");
+        const adults = getQueryParams("adults");
+        const children = getQueryParams("children");
+        const infants = getQueryParams("infants");
+        const pets = getQueryParams("pets");
+
+        let newSrc = iframe.src;
+        newSrc += newSrc.includes("?") ? "&" : "?";
+        newSrc += `checkin=${checkin}&checkout=${checkout}&adults=${adults}&children=${children}&pets=${pets}&infants=${infants}`;
+
+        iframe.src = newSrc;
+    }
+
+    useEffect(() => {
+        updateIframeSrc();
+    })
+    
   return (
     // TODO use typography for all of this stuff
     <section data-theme="mybrand" className="bg-base-100 overflow-hidden" id="Property1"> 
@@ -170,37 +202,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                     </p>
                 </article>
             </div>
-        </div>
-
-        {/* script to pull dates selected in property search into property page*/}
-        {/* because clicking on a search result redirects to the live url, this can't be debugged easily on localhost */}
-        <script>
-            function getQueryParams(param) {
-                const urlSearchParams = new URLSearchParams(window.location.search);
-                return urlSearchParams.get(param);
-            }
-
-            function updateIframeSrc() {
-                const iframe = document.getElementById("booking-iframe");
-                if (!iframe) return;
-
-                const checkin = getQueryParams("checkin");
-                const checkout = getQueryParams("checkout");
-                const adults = getQueryParams("adults");
-                const children = getQueryParams("children");
-                const infants = getQueryParams("infants");
-                const pets = getQueryParams("pets");
-
-                let newSrc = iframe.src;
-                newSrc += newSrc.includes("?") ? "&" : "?";
-                newSrc += `checkin=${checkin}&checkout=${checkout}&adults=${adults}&children=${children}&pets=${pets}&infants=${infants}`;
-
-                iframe.src = newSrc;
-            }
-
-            window.addEventListener("load", updateIframeSrc);
-        </script>
-      
+        </div>      
     </section>
   );
 };

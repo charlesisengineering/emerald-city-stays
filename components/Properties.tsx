@@ -1,9 +1,12 @@
+'use client'
+
 import React from 'react'
 import image1 from "@/app/landingpic.jpg"
 import image2 from "@/app/Songbird.jpg"
 import image3 from "@/app/Launchpad.jpg"
 import PropertyCard from "./PropertyCard";
-import { listingCardProps } from '@/types/userTypes';
+import { listingCardProps, searchWidgetProps } from '@/types/userTypes';
+import buildSearchWidget from "@/libs/hospitable";
 
 // <Properties/> displays the short term rental property pages
 // See <Pricing/> for the origin of this page
@@ -13,8 +16,20 @@ const Properties: React.FC<listingCardProps> = ({
     soundBreezeLink,
     launchpadLink,
     headlineText,
-    taglineText
+    taglineText,
+    showHospitableSearchWidget
 }) => {
+
+    if (showHospitableSearchWidget){
+        const searchWidgetQueryProps:searchWidgetProps = {
+            widgetElement: 'hospitable-widget-container',
+            searchAttribute: '/search'
+        }
+    
+        buildSearchWidget(searchWidgetQueryProps);
+    }
+
+
   return (
     <section className="bg-base-100 overflow-hidden max-w-screen-xl" id="properties" data-theme="mybrand" style={{ margin: '0 auto' }}>
         <div className="px-8 max-w-5xl mx-auto">
@@ -26,10 +41,7 @@ const Properties: React.FC<listingCardProps> = ({
             </div>
         </div>
 
-        <div>
-            <script src="https://hospitable.b-cdn.net/direct-property-search-widget/hospitable-search-widget.prod.js"></script>
-            <hospitable-direct-mps identifier="5fb3442b-ded2-4e6b-be42-0292dcd8042a" type="custom" results-url="/search"></hospitable-direct-mps>    
-        </div>
+        < div id='hospitable-widget-container' className={`${showHospitableSearchWidget ? '' : 'hidden'}`} />
 
         <div className="grid grid-cols-1 gap-5 px-4 md:px-0 md:grid-cols-2 md:gap-10">
             <PropertyCard href={soundBreezeLink} 

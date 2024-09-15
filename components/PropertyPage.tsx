@@ -23,7 +23,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
     // script to pull dates selected in property search into property page
     // because clicking on a search result redirects to the live url, this can't be debugged easily on localhost
 
-    function getQueryParams(param) {
+    function getQueryParams(param: string) {
         const urlSearchParams = new URLSearchParams(window.location.search);
         return urlSearchParams.get(param);
     }
@@ -49,7 +49,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
     useEffect(() => {
         updateIframeSrc();
     })
-    
+
   return (
     // TODO use typography for all of this stuff
     <section data-theme="mybrand" className="bg-base-100 overflow-hidden" id="Property1"> 

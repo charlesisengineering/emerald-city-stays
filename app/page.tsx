@@ -20,7 +20,8 @@ export default function Home() {
             soundBreezeLink='/listings/sound-breeze'
             launchpadLink='/listings/seattle-launchpad'
             headlineText='Our Properties'
-            taglineText='We&apos;ve got you covered from Shoreline to Tukwila'/>
+            taglineText='We&apos;ve got you covered from Shoreline to Tukwila'
+            showHospitableSearchWidget/>
         {/* <FAQ />
         <CTA /> */}
       </main>

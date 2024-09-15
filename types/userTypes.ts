@@ -6,7 +6,7 @@ export type amenitiesList = {
     bathroom: string[];
     bedroom: string[];
     additional: string[];
-  }
+}
 
 export interface PropertyPageProps {
     propertyName: string;
@@ -16,7 +16,7 @@ export interface PropertyPageProps {
     neighborhoodDescription: string;
     carouselImages: StaticImageData[]; // An array of all images to live in the carousel 
     bookingWidget: string; // url for the booking widget, goes into the src of the iframe
-  }
+}
 
 export type listingCardProps = {
     songbirdLink: string;
@@ -24,6 +24,7 @@ export type listingCardProps = {
     launchpadLink: string;
     headlineText: string;
     taglineText: string;
+    showHospitableSearchWidget?: boolean;
 }
 
 export interface PropertyCardProps {
@@ -33,4 +34,9 @@ export interface PropertyCardProps {
     imageSrc: StaticImageData;
     primaryBadgeHidden?: boolean;
     secondaryBadgesHidden?: boolean;
-  }
+}
+
+export interface searchWidgetProps{
+    widgetElement: string;
+    searchAttribute?: string;
+}

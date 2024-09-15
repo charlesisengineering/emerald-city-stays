@@ -1,14 +1,25 @@
-import { renderSchemaTags } from "@/libs/seo";
-import React from "react";
+'use client'
 
-export default function HouseManual() {
+import { renderSchemaTags } from "@/libs/seo";
+import buildSearchWidget from "@/libs/hospitable";
+import React from "react";
+import { searchWidgetProps } from "@/types/userTypes";
+
+export default function SearchPage() {
+
+    const searchWidgetResultProps:searchWidgetProps = {
+        widgetElement: "hospitable-widget-container",
+    }
+
+    buildSearchWidget(searchWidgetResultProps);
+
+
   return (
     <>
     {renderSchemaTags()}
-      <main>
-        <script src="https://hospitable.b-cdn.net/direct-property-search-widget/hospitable-search-widget.prod.js"></script>
-        <hospitable-direct-mps identifier="5fb3442b-ded2-4e6b-be42-0292dcd8042a" type="custom"></hospitable-direct-mps>
-      </main>
+    <main>
+        < div id='hospitable-widget-container' />
+    </main>
     </>
   );
 }

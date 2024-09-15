@@ -171,6 +171,35 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                 </article>
             </div>
         </div>
+
+        {/* script to pull dates selected in property search into property page*/}
+        {/* because clicking on a search result redirects to the live url, this can't be debugged easily on localhost */}
+        <script>
+            function getQueryParams(param) {
+                const urlSearchParams = new URLSearchParams(window.location.search);
+                return urlSearchParams.get(param);
+            }
+
+            function updateIframeSrc() {
+                const iframe = document.getElementById("booking-iframe");
+                if (!iframe) return;
+
+                const checkin = getQueryParams("checkin");
+                const checkout = getQueryParams("checkout");
+                const adults = getQueryParams("adults");
+                const children = getQueryParams("children");
+                const infants = getQueryParams("infants");
+                const pets = getQueryParams("pets");
+
+                let newSrc = iframe.src;
+                newSrc += newSrc.includes("?") ? "&" : "?";
+                newSrc += `checkin=${checkin}&checkout=${checkout}&adults=${adults}&children=${children}&pets=${pets}&infants=${infants}`;
+
+                iframe.src = newSrc;
+            }
+
+            window.addEventListener("load", updateIframeSrc);
+        </script>
       
     </section>
   );

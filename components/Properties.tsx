@@ -17,13 +17,18 @@ const Properties: React.FC<listingCardProps> = ({
 }) => {
   return (
     <section className="bg-base-100 overflow-hidden max-w-screen-xl" id="properties" data-theme="mybrand" style={{ margin: '0 auto' }}>
-        <div className="py-8 px-8 max-w-5xl mx-auto">
+        <div className="px-8 max-w-5xl mx-auto">
             <div className="flex flex-col text-center w-full mb-10">
                 <h1 className="font-bold text-3xl lg:text-5xl tracking-tight text-primary mb-8">{headlineText}</h1>
                 <h2 className="font-medium text-xl lg:text-2xl tracking-tight">
                 {taglineText}
                 </h2>
             </div>
+        </div>
+
+        <div>
+            <script src="https://hospitable.b-cdn.net/direct-property-search-widget/hospitable-search-widget.prod.js"></script>
+            <hospitable-direct-mps identifier="5fb3442b-ded2-4e6b-be42-0292dcd8042a" type="custom" results-url="/search"></hospitable-direct-mps>    
         </div>
 
         <div className="grid grid-cols-1 gap-5 px-4 md:px-0 md:grid-cols-2 md:gap-10">

@@ -94,12 +94,13 @@ export default function songbirdManual() {
                         <h3>Door Locks</h3>
                         <p>Please lock the door by pressing the lock icon on the smart lock upon leaving the unit.</p>
                         <h3>Laundry</h3>
-                        <p>Detergent pods will be left out in a small wooden bowl for you to use during your stay. 
-                            If you need more detergent please get in touch with your host. Please clean the dryer&apos;s lint
-                            filter before each use, it can be found on the top of the dyer.</p>
+                        <p>Please clean the dryer&apos;s lint filter before each use, it can be found on the top of 
+                            the dyer. Please leave the washing machine lid open after finishing a load if you do laundry. 
+                            Please select a spin speed of medium or lower, which will decrease the chance of an unbalanced load, 
+                            which greatly increases washing times and water use, as the machine will run up to four rinse cycles.</p>
                         <h3>Waste Disposal</h3>
                         <p>The kitchen trash can has seperate bins for trash and recycling. Please separate trash and 
-                            recycling and bring bags to the street bins on the alley as needed. Additional kitchen bin 
+                            recycling and bring bags to the bins in front of the house as needed. Additional kitchen bin 
                             liners are available under the kitchen sink. The street bins are color coded as follows:</p>
                         <ul>
                             <li>Black: non-recyclable or compostable waste</li>

@@ -4,6 +4,7 @@ import rearImage from '@/app/SoundBreezePhotos/rear.jpg'
 import entryImage from '@/app/SoundBreezePhotos/entry_door.jpg'
 import trashImage from '@/app/SoundBreezePhotos/trash.jpeg'
 import lockImage from '@/app/SoundBreezePhotos/lock.jpg'
+import Image from "next/image";
 
 export default function soundBreezeManual() {
 
@@ -22,15 +23,24 @@ export default function soundBreezeManual() {
                             back of the house.
                         </p>
 
-                        {/* TODO Should we be using the Next.js Image class here? */}
-                        <img src={rearImage.src} alt="View of Sound Breeze from alley"/>
+                        <Image src={rearImage.src} 
+                        alt="View of Sound Breeze from alley"
+                        className="w-full max-w-screen-sm"
+                        priority={true}
+                        width={500}
+                        height={500}/>
                     
                         <p>
                             Head around the right side of the house to the orange door to gain entry into the 
                             guest suite!    
                         </p>
 
-                        <img src={entryImage.src} alt="Entry Door"/>
+                        <Image src={entryImage.src} 
+                        alt="Entry Door"
+                        className="w-full max-w-screen-sm"
+                        priority={true}
+                        width={500}
+                        height={500}/>
 
                     <h2>Checking In</h2>
                         <p>
@@ -44,7 +54,12 @@ export default function soundBreezeManual() {
                             Please lock the door after yourself when leaving the guest suite by pressing the lock 
                             button on the bottom right.
                         </p>
-                        <img className ='max-w-xs object-cover' src={lockImage.src} alt='Sound Breeze smart lock' />
+                        <Image src={lockImage.src} 
+                        alt='Sound Breeze smart lock'
+                        className ='max-w-xs object-cover' 
+                        priority={true}
+                        width={500}
+                        height={500}/>
 
                     <h2>Useful Info</h2>
                         <h3>Wifi Info</h3>
@@ -115,7 +130,14 @@ export default function soundBreezeManual() {
                                 greases)</li>
                             <li>Green: industrially compostable waste (food scraps, paper products with food residue)</li>
                         </ul>
-                        <img src={trashImage.src} alt="Trash cans at Sound Breeze"/>
+
+                        <Image src={trashImage.src} 
+                        alt="Trash cans at Sound Breeze"
+                        className="w-full max-w-screen-sm"
+                        priority={true}
+                        width={500}
+                        height={500}/>
+
                         <h3>Smoking</h3>
                         <p>The property is non-smoking. If you wish to smoke, please do so at the alley in the back.</p>
                         <h3>Check In and Out Times</h3>

@@ -4,6 +4,7 @@ import parkingImage from '@/app/LaunchpadPhotos/parking.png'
 import lockImage from '@/app/LaunchpadPhotos/lock.jpeg'
 // import trashImage from '@/app/SongbirdPhotos/trash.jpeg'
 import entryImage from '@/app/LaunchpadPhotos/rear.png'
+import Image from "next/image";
 
 export default function launchpadManual() {
 
@@ -19,16 +20,24 @@ export default function launchpadManual() {
                         Your vacation rental is located at 1025 S 112th St, Seattle 98168. The home is on the South side of the street and features ample street parking for guests. Please note that the front door to the house is for a separate unit. When you arrive please park on the street, then walk down the driveway towards the garage. When you reach the back of the house you will see a set of stairs leading down to the entrance to your guest suite.                        </p>
 
                         {/* TODO Should we be using the Next.js Image class here? */}
-                        <img src={parkingImage.src} 
-                            alt="View of Seattle Launchpad parking"/>
+                        <Image src={parkingImage.src} 
+                            alt="View of Seattle Launchpad parking"
+                            className="w-full max-w-screen-sm"
+                            priority={true}
+                            width={500}
+                            height={500}/>
                     
                         <p>
                         Rounding the back corner of the house, the stairs down to your unit are in the bottom left of the photo.
 
                         Ample street parking is typically available on both sides of S 112th St. Please do not park in the driveway other than briefly for loading and unloading. Do not park on the grass under any circumstances, as a very expensive septic system is installed in the lawn.                        </p>
 
-                        <img src={entryImage.src} 
-                            alt='Seattle Launchpad entry' />
+                        <Image src={entryImage.src} 
+                            alt='Seattle Launchpad entry'
+                            className="w-full max-w-screen-sm"
+                            priority={true}
+                            width={500}
+                            height={500}/>
 
                     <h2>Checking In</h2>
                         <p>
@@ -42,9 +51,12 @@ export default function launchpadManual() {
                             Please lock the door after yourself when leaving the guest suite by pressing the lock 
                             button on the bottom right.
                         </p>
-                        <img className ='max-w-xs object-cover' 
-                            src={lockImage.src} 
-                            alt='Seattle Launchpad smart lock' />
+                        <Image src={lockImage.src} 
+                            alt='Seattle Launchpad smart lock'
+                            className="object-cover max-w-xs"
+                            priority={true}
+                            width={500}
+                            height={500}/>
 
                     <h2>Useful Info</h2>
                         <h3>Wifi Info</h3>

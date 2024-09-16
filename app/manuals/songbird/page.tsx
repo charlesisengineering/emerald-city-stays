@@ -4,6 +4,7 @@ import parkingImage from '@/app/SongbirdPhotos/parking.png'
 // import entryImage from '@/app/SongbirdPhotos/entry_door.jpg'
 // import trashImage from '@/app/SongbirdPhotos/trash.jpeg'
 import lockImage from '@/app/SongbirdPhotos/lock.png'
+import Image from "next/image";
 
 export default function songbirdManual() {
 
@@ -19,8 +20,12 @@ export default function songbirdManual() {
                         Your vacation rental is located on the East side of 15th Ave in the Maple Leaf neighborhood of Seattle, at 10208 15th Ave NE. The parking spot on the far right when looking at the house is available for guests arriving by car. Please park so that the housemates upstairs are still able to park three cars in the remaining spaces.
                         </p>
 
-                        {/* TODO Should we be using the Next.js Image class here? */}
-                        <img src={parkingImage.src} alt="View of Songbird Suite parking"/>
+                        <Image src={parkingImage.src} 
+                        alt="View of Songbird Suite parking"
+                        className="w-full max-w-screen-sm"
+                        priority={true}
+                        width={500}
+                        height={500}/>
                     
                         <p>
                         Head around the alley on the right side of the house to access the backyard and the entry into the Maple Leaf Guest Suite!
@@ -40,7 +45,12 @@ export default function songbirdManual() {
                             Please lock the door after yourself when leaving the guest suite by pressing the lock 
                             button on the bottom right.
                         </p>
-                        <img className ='max-w-xs object-cover' src={lockImage.src} alt='Sound Breeze smart lock' />
+                        <Image src={lockImage.src} 
+                        alt='Sound Breeze smart lock'
+                        className='max-w-xs object-cover' 
+                        priority={true}
+                        width={500}
+                        height={500}/>
 
                     <h2>Useful Info</h2>
                         <h3>Wifi Info</h3>

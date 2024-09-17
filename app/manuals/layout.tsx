@@ -10,7 +10,7 @@ export default async function LayoutManual({ children }: { children: any }) {
         <Header/>
       </Suspense>
 
-      <main className="min-h-screen max-w-6xl mx-auto lg:p-8">{children}</main>
+      <main className="min-h-screen max-w-screen-xl mx-auto lg:p-8">{children}</main>
 
       <div className="h-24" />
 

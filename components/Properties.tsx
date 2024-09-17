@@ -43,7 +43,7 @@ const Properties: React.FC<listingCardProps> = ({
 
         < div id='hospitable-widget-container' className={`${showHospitableSearchWidget ? '' : 'hidden'}`} />
 
-        <div className="grid grid-cols-1 gap-5 px-4 md:px-0 md:grid-cols-2 md:gap-10">
+        <div className="grid grid-cols-1 gap-5 px-4 md:grid-cols-3 md:gap-6">
             <PropertyCard href={soundBreezeLink} 
                 title="Sound Breeze"       
                 imageSrc={image1}

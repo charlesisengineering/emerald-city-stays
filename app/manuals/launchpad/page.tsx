@@ -92,17 +92,20 @@ export default function launchpadManual() {
                             guests listed on the reservation are allowed in the unit.
                         </p>
                         <h3>Sanitary Products</h3>
-                        <p>Please do not flush sanitary items or baby wipes in the toilet, even if they&apos;re 
-                            advertised as flushable.</p>
+                        <p>Please do not flush anything other than toilet paper and human waste down the toilet. 
+                            Do not flush sanitary items or baby wipes in the toilet, even if they&apos;re 
+                            advertised as flushable. This property is on a septic system, rather than municipal
+                            sewer, and anything flushed besides toilet paper and human waste can damage the 
+                            system. Guests who violate this rule may be liable for damage to the septic system.</p>
                         <h3>Shower Hair Catcher</h3>
                         <p>A hair catcher is installed on the shower drain to keep it flowing well for you. Please 
                             do not remove the hair catcher. It will be cleaned and sanitized before your visit, 
                             simply remove the hair and replace the hair catcher if it becomes clogged during your stay.
                         </p>
                         <h3>Cooking</h3>
-                        <p>When cooking please always use the vent on the microwave. As it&apos;s heated modern cookware 
+                        <p>When cooking please always use the vent above the stove. As it&apos;s heated modern cookware 
                             produces particulates that may be harmful to your lungs. Warm, moist air from cooking 
-                            can cause paint to blister and mold to form. Using the vent during cooking is a simple 
+                            can also cause paint to blister and mold to form. Using the vent during cooking is a simple 
                             and effective way to protect human health as well as property.
                             </p>
                         <h3>Shoes</h3>

@@ -23,6 +23,8 @@ export default function soundBreezePropertyPage() {
         image5
     ];
 
+    const soundBreezeCoordinates = [47.542100489716034, -122.3783156994263];
+
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const soundBreezeAmenities: amenitiesList = {
         basicAmenities: ['Fully stocked kitchen',
@@ -86,6 +88,8 @@ export default function soundBreezePropertyPage() {
             propertyDescription='Kick back and relax in this newly renovated guest suite. 
                 The serene Gatewood neighborhood features stunning Puget Sound views, an abundance of 
                 walkable cafes, restaurants, and parks, and convenient access to the Morgan Junction, Lincoln Park, or Downtown Seattle.'
+            
+            propertyCoordinates={soundBreezeCoordinates}
             neighborhoodDescription='Gatewood is a serene neighborhood with lush greenery, abundant parks and cafes, 
                 and stunning views of the Puget Sound and Downtown Seattle. The quiet neighborhood 
                 is a walker&apos;s delight with multiple parks, coffee shops and restaurants within easy walking distance.

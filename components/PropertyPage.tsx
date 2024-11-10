@@ -14,6 +14,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
     propertyDescription,
     propertyProse,
     propertyAmenities,
+    propertyCoordinates,
     neighborhoodDescription,
     carouselImages,
     bookingWidget
@@ -46,6 +47,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
 
         iframe.src = newSrc;
     }
+
     let map: google.maps.Map;
 
     async function initMap(): Promise<void> {
@@ -58,7 +60,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
 
         map = new Map(document.getElementById("map") as HTMLElement, {
             zoom: 15,
-            center: {lat: 47.5421028137207, lng: -122.37831115722656}
+            center: {lat: propertyCoordinates[0], lng: propertyCoordinates[1]}
           });
         
         // TODO should we import a library for the circle element? Seems like no. Does this need to happen after the .importLibrary("maps") promise resolves?
@@ -68,7 +70,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
             strokeWeight: 2,
             fillColor: "#FF0000",
             fillOpacity: 0.35,
-            center: {lat: 47.5421028137207, lng: -122.37831115722656},
+            center: {lat: propertyCoordinates[0], lng: propertyCoordinates[1]},
             radius: 250
         });
 

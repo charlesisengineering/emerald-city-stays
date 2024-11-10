@@ -21,6 +21,8 @@ export default function launchpadPropertyPage() {
         image4
     ];
 
+    const launchpadCoordinates = [47.50275263739177, -122.31943184513266];
+
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const launchpadAmenities: amenitiesList = {
         basicAmenities: ['Fully stocked kitchen',
@@ -76,6 +78,7 @@ export default function launchpadPropertyPage() {
             you&apos;ll be just a short drive from everything the Emerald City has to offer. The private suite accommodates 
             4 guests with plenty of space to stretch out, super-fast internet, air conditioning, two workstations 
             for remote workers, a new 58" smart TV, and a full kitchen for preparing meals.' 
+            propertyCoordinates={launchpadCoordinates}
             neighborhoodDescription='The neighborhood is very residential while also being centrally located. You&apos;ll be 
             within 15 minutes of Downtown Seattle and within 10 minutes of cool urban centers in White Center and Georgetown.'
             carouselImages={images}

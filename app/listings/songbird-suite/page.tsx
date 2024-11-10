@@ -21,6 +21,8 @@ export default function songbirdPropertyPage() {
         image4
     ];
 
+    const songbirdCoordinates = [47.70262199168761, -122.31209870196159];
+
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const songbirdAmenities: amenitiesList = {
         basicAmenities: ['Fully stocked kitchen',
@@ -76,6 +78,7 @@ export default function songbirdPropertyPage() {
             access to the heart of Seattle with just one bus ride from a stop a block away. The private suite accommodates 
             4 guests with plenty of space to stretch out, super-fast fiber internet, a new 65" smart TV, and a brand new 
             kitchen for preparing meals.'
+            propertyCoordinates={songbirdCoordinates}
             neighborhoodDescription='Maple Leaf provides a tranquil environment just north of the center of Seattle with 
             plenty of cool eateries and easy access to the developing Northgate area.
             

@@ -57,7 +57,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
         //const { Circle } = await google.maps.importLibrary("circle") as google.maps.Symbol;
 
         map = new Map(document.getElementById("map") as HTMLElement, {
-            zoom: 14,
+            zoom: 15,
             center: {lat: 47.5421028137207, lng: -122.37831115722656}
           });
         
@@ -219,10 +219,9 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                         </p>
                     </article>
                     <div className="flex w-full h-96" id='map'>
-                        <script
+                        <script async defer
                             // TODO debug Uncaught (in promise) InvalidValueError: initMap is not a function. Does script callback before my function is defined?
-                            src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=initMap&v=weekly`}
-                            async defer
+                            src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=initMap&v=weekly&loading=async`}
                         ></script>
                         {/* <Script 
                             src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=initMap&v=weekly`} 

@@ -7,7 +7,7 @@
 import PictureSlideshow from "./PictureSlideshow"
 import { PropertyPageProps } from "@/types/userTypes";
 import React, { useEffect } from 'react'
-import Script from 'next/script'
+//import Script from 'next/script'
 
 const PropertyPage: React.FC<PropertyPageProps> = ({
     propertyName,
@@ -223,7 +223,7 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                     <div className="flex w-full h-96" id='map'>
                         <script async defer
                             // TODO debug Uncaught (in promise) InvalidValueError: initMap is not a function. Does script callback before my function is defined?
-                            src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=initMap&v=weekly&loading=async`}
+                            src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=Function.prototype&v=weekly&loading=async`}
                         ></script>
                         {/* <Script 
                             src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=initMap&v=weekly`} 

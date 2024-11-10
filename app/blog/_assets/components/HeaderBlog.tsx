@@ -10,6 +10,7 @@ import logo from "@/app/icon.png";
 import config from "@/config";
 import { categories } from "../content";
 import ButtonSignin from "@/components/ButtonSignin";
+import React from "react"
 
 const links: {
   href: string;

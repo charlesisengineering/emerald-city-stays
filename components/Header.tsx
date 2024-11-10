@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import type { JSX } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -8,7 +8,6 @@ import Image from "next/image";
 import ButtonCheckAvailability from "./ButtonCheckAvailability";
 import logo from "@/app/icon.png";
 import config from "@/config";
-import React from 'react'
 
 const links: {
   href: string;

@@ -51,6 +51,7 @@ const Footer = () => {
                     target="_blank"
                     className="link link-hover"
                     aria-label="Contact Support"
+                    rel="noreferrer"
                   >
                     Support
                   </a>

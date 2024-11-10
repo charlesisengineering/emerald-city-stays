@@ -7,6 +7,7 @@
 import PictureSlideshow from "./PictureSlideshow"
 import { PropertyPageProps } from "@/types/userTypes";
 import React, { useEffect } from 'react'
+import Script from 'next/script'
 
 const PropertyPage: React.FC<PropertyPageProps> = ({
     propertyName,
@@ -45,6 +46,40 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
 
         iframe.src = newSrc;
     }
+    let map: google.maps.Map;
+
+    async function initMap(): Promise<void> {
+        // load library at runtime per https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+        const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
+        // this is how you import markers
+        // const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
+        // TODO: so is this how you import circle symbols?
+        //const { Circle } = await google.maps.importLibrary("circle") as google.maps.Symbol;
+
+        map = new Map(document.getElementById("map") as HTMLElement, {
+            zoom: 14,
+            center: {lat: 47.5421028137207, lng: -122.37831115722656}
+          });
+        
+        // TODO should we import a library for the circle element? Seems like no. Does this need to happen after the .importLibrary("maps") promise resolves?
+        const circle = new google.maps.Circle({
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35,
+            center: {lat: 47.5421028137207, lng: -122.37831115722656},
+            radius: 250
+        });
+
+        circle.setMap(map);
+    }
+
+    // Use useEffect to initialize the map when the component mounts
+    // TODO this is necessary to make the map appear but I think that's an error. The script callback should do that but maybe defer isn't good enough?
+    useEffect(() => {
+        initMap();
+    }, []);
 
     useEffect(() => {
         updateIframeSrc();
@@ -176,12 +211,25 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
 
         <div className="grid grid-cols-1 mx-auto md:grid-cols-2 gap-4 max-w-screen-xl">
             <div className="flex justify-center p-4 lg:p-10">
-                <article className="prose lg:prose-l">
-                    <h3> About the Neighborhood</h3>
-                    <p>
-                        {neighborhoodDescription}
-                    </p>
-                </article>
+                <div className="grid grid-cols-1 space-y-8 max-w-screen-xl">
+                    <article className="prose lg:prose-l">
+                        <h3> About the Neighborhood</h3>
+                        <p>
+                            {neighborhoodDescription}
+                        </p>
+                    </article>
+                    <div className="flex w-full h-96" id='map'>
+                        <script
+                            // TODO debug Uncaught (in promise) InvalidValueError: initMap is not a function. Does script callback before my function is defined?
+                            src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=initMap&v=weekly`}
+                            async defer
+                        ></script>
+                        {/* <Script 
+                            src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=initMap&v=weekly`} 
+                            strategy="beforeInteractive"
+                        />  */}
+                    </div > 
+                </div>
             </div>
 
             <div className="flex justify-center p-4 lg:p-10">
@@ -202,7 +250,9 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                     </p>
                 </article>
             </div>
-        </div>      
+        </div>
+            
+
     </section>
   );
 };

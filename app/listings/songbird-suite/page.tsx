@@ -9,7 +9,7 @@ import image1 from '@/app/SongbirdPhotos/king3.jpeg';
 import image2 from '@/app/SongbirdPhotos/kitchen.jpeg';
 import image3 from '@/app/SongbirdPhotos/living.jpeg';
 import image4 from '@/app/SongbirdPhotos/bathroom.jpeg';
-import { amenitiesList } from "@/types/userTypes";
+import { amenitiesList, MapCoordinates } from "@/types/userTypes";
 
 export default function songbirdPropertyPage() {
 
@@ -21,7 +21,9 @@ export default function songbirdPropertyPage() {
         image4
     ];
 
-    const songbirdCoordinates = [47.70262199168761, -122.31209870196159];
+    const songbirdCoordinates: MapCoordinates = {
+        latitude: 47.70262199168761, 
+        longitude: -122.31209870196159};
 
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const songbirdAmenities: amenitiesList = {

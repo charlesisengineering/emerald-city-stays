@@ -10,7 +10,7 @@ import image2 from '@/app/SoundBreezePhotos/king_bed.jpg'
 import image3 from '@/app/SoundBreezePhotos/kitchen_dining.jpg'
 import image4 from '@/app/SoundBreezePhotos/bathroom.jpg'
 import image5 from '@/app/SoundBreezePhotos/seating.jpg'
-import { amenitiesList } from "@/types/userTypes";
+import { amenitiesList , MapCoordinates} from "@/types/userTypes";
 
 export default function soundBreezePropertyPage() {
 
@@ -23,7 +23,9 @@ export default function soundBreezePropertyPage() {
         image5
     ];
 
-    const soundBreezeCoordinates = [47.542100489716034, -122.3783156994263];
+    const soundBreezeCoordinates: MapCoordinates = {
+        latitude: 47.542100489716034, 
+        longitude: -122.3783156994263};
 
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const soundBreezeAmenities: amenitiesList = {

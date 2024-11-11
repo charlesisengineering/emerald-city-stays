@@ -9,7 +9,7 @@ import image1 from '@/app/LaunchpadPhotos/living.jpeg'
 import image2 from '@/app/LaunchpadPhotos/king.jpeg'
 import image3 from '@/app/LaunchpadPhotos/kitchen.jpeg'
 import image4 from '@/app/LaunchpadPhotos/bathroom.jpeg'
-import { amenitiesList } from "@/types/userTypes";
+import { amenitiesList, MapCoordinates } from "@/types/userTypes";
 
 export default function launchpadPropertyPage() {
 
@@ -20,8 +20,10 @@ export default function launchpadPropertyPage() {
         image3,
         image4
     ];
-
-    const launchpadCoordinates = [47.50275263739177, -122.31943184513266];
+    // assign a const of type MapCoordinates with values for latitude and longitude
+    const launchpadCoordinates:MapCoordinates = {
+        latitude: 47.50275263739177, 
+        longitude: -122.31943184513266};
 
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const launchpadAmenities: amenitiesList = {

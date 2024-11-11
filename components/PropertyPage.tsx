@@ -7,6 +7,7 @@
 import PictureSlideshow from "./PictureSlideshow"
 import { PropertyPageProps } from "@/types/userTypes";
 import React, { useEffect } from 'react'
+import Map from "@/components/Map"
 //import Script from 'next/script'
 
 const PropertyPage: React.FC<PropertyPageProps> = ({
@@ -19,12 +20,8 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
     carouselImages,
     bookingWidget
 }) => {
-
-
-
     // script to pull dates selected in property search into property page
     // because clicking on a search result redirects to the live url, this can't be debugged easily on localhost
-
     function getQueryParams(param: string) {
         const urlSearchParams = new URLSearchParams(window.location.search);
         return urlSearchParams.get(param);
@@ -48,41 +45,6 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
         iframe.src = newSrc;
     }
 
-    let map: google.maps.Map;
-
-    async function initMap(): Promise<void> {
-        // load library at runtime per https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-        const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
-        // this is how you import markers
-        // const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
-        // TODO: so is this how you import circle symbols?
-        //const { Circle } = await google.maps.importLibrary("circle") as google.maps.Symbol;
-
-        map = new Map(document.getElementById("map") as HTMLElement, {
-            zoom: 15,
-            center: {lat: propertyCoordinates[0], lng: propertyCoordinates[1]}
-          });
-        
-        // TODO should we import a library for the circle element? Seems like no. Does this need to happen after the .importLibrary("maps") promise resolves?
-        const circle = new google.maps.Circle({
-            strokeColor: "#FF0000",
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: "#FF0000",
-            fillOpacity: 0.35,
-            center: {lat: propertyCoordinates[0], lng: propertyCoordinates[1]},
-            radius: 250
-        });
-
-        circle.setMap(map);
-    }
-
-    // Use useEffect to initialize the map when the component mounts
-    // TODO this is necessary to make the map appear but I think that's an error. The script callback should do that but maybe defer isn't good enough?
-    useEffect(() => {
-        initMap();
-    }, []);
-
     useEffect(() => {
         updateIframeSrc();
     })
@@ -101,7 +63,6 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
         </div>
       </div>
 
-        {/* ~~~~~~~~~~~~~~~ TODO: COMPARE THIS IMPLEMENTATION TO SOUND BREEZE, LEARN WHY THIS WORKS AND SB DOESNT~~~~~~~~~~~~~~~~~~~~~~ */}
         {/* Container with flexbox layout */}
         <div className="flex flex-col md:flex-row bg-base-100 p-4 lg:p-10 max-w-screen-xl mx-auto">
 
@@ -220,16 +181,9 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                             {neighborhoodDescription}
                         </p>
                     </article>
-                    <div className="flex w-full h-96" id='map'>
-                        <script async defer
-                            // TODO debug Uncaught (in promise) InvalidValueError: initMap is not a function. Does script callback before my function is defined?
-                            src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=Function.prototype&v=weekly&loading=async`}
-                        ></script>
-                        {/* <Script 
-                            src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&callback=initMap&v=weekly`} 
-                            strategy="beforeInteractive"
-                        />  */}
-                    </div > 
+                    < Map 
+                        latitude={propertyCoordinates.latitude}
+                        longitude={propertyCoordinates.longitude}/>
                 </div>
             </div>
 

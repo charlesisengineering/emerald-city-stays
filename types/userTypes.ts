@@ -13,10 +13,15 @@ export interface PropertyPageProps {
     propertyDescription: string;
     propertyProse: string;
     propertyAmenities: amenitiesList;
-    propertyCoordinates: number[];
+    propertyCoordinates: MapCoordinates;
     neighborhoodDescription: string;
     carouselImages: StaticImageData[]; // An array of all images to live in the carousel 
     bookingWidget: string; // url for the booking widget, goes into the src of the iframe
+}
+
+export interface MapCoordinates {
+    latitude: number;
+    longitude: number;
 }
 
 export type listingCardProps = {

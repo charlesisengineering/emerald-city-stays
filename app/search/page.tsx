@@ -30,7 +30,7 @@ export default function SearchPage() {
         <main>
             < div 
                 id='hospitable-widget-container' 
-                className="w-full relative pb-4 overflow-y-auto max-h-[calc(100vh-200px)]"
+                className="w-full relative pb-4 overflow-y-auto md:overflow-y-visible max-h-[calc(100vh-200px)]"
             />
         </main>
     </>

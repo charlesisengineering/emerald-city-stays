@@ -28,7 +28,10 @@ export default function songbirdManual() {
                         height={500}/>
                     
                         <p>
-                        Head around the alley on the right side of the house to access the backyard and the entry into the Maple Leaf Guest Suite!
+                            Head around the alley on the right side of the house to access the backyard and the entry into the Maple Leaf Guest Suite!
+                            The pathway should be lit by motion-activated path lights as well as a wall-mounted outdoor light. The wall-mounted light
+                            is controlled by the light switch on the wall opposite the queen bed in the primary bedroom. If any of the path lighting
+                            is not working please contact your host.
                         </p>
 
                         {/* <img src={entryImage.src} alt="Entry Door"/> */}

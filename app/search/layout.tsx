@@ -10,7 +10,7 @@ export default async function LayoutManual({ children }: { children: React.React
             <Header/>
         </Suspense>
 
-        <main className="min-h-screen max-w-6xl mx-auto px-4 lg:mb-24 lg:p-8 overflow-hidden md: overflow-visible">
+        <main className="min-h-screen max-w-6xl mx-auto px-4 md:mb-24 lg:p-8 overflow-hidden md: overflow-visible">
             {children}
         </main>
 

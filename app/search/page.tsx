@@ -29,8 +29,8 @@ export default function SearchPage() {
         {renderSchemaTags()}
         <main>
             < div 
-                id='hospitable-widget-container' 
-                className="w-full relative pb-4 overflow-y-auto md:overflow-y-visible max-h-[calc(100vh-200px)]"
+                id='hospitable-widget-container'
+                className="w-full relative pb-4 overflow-x-hidden overflow-y-auto md:overflow-visible max-h-[calc(100vh-200px)]"
             />
         </main>
     </>

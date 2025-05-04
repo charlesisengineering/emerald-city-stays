@@ -64,8 +64,8 @@ export default function soundBreezeManual() {
                     <h2>Useful Info</h2>
                         <h3>Wifi Info</h3>
                             <ul>
-                                <li>Network: 2.4crabapples</li>
-                                <li>Password: thxgiuseppe</li>
+                                <li>Network: 5crabapples</li>
+                                <li>Password: Thxgiusepp3</li>
                             </ul>
                         <h3>Heating</h3>
                             <p>The living, dining, and kitchen area is heated by a pair of electric wall heaters. The 

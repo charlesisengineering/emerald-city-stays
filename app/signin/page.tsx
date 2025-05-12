@@ -2,15 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { Provider } from "@supabase/supabase-js";
+import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import config from "@/config";
 
-// This a login/singup page for Supabase Auth.
-// Successfull login redirects to /api/auth/callback where the Code Exchange is processed (see app/api/auth/callback/route.js).
 export default function Login() {
-  const supabase = createClientComponentClient();
   const [email, setEmail] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
@@ -19,7 +15,7 @@ export default function Login() {
     e: any,
     options: {
       type: string;
-      provider?: Provider;
+      provider?: string;
     }
   ) => {
     e?.preventDefault();
@@ -28,29 +24,18 @@ export default function Login() {
 
     try {
       const { type, provider } = options;
-      const redirectURL = window.location.origin + "/api/auth/callback";
 
-      if (type === "oauth") {
-        await supabase.auth.signInWithOAuth({
-          provider,
-          options: {
-            redirectTo: redirectURL,
-          },
-        });
+      if (type === "oauth" && provider === "google") {
+        await signIn("google", { callbackUrl: config.auth.callbackUrl });
       } else if (type === "magic_link") {
-        await supabase.auth.signInWithOtp({
-          email,
-          options: {
-            emailRedirectTo: redirectURL,
-          },
-        });
-
-        toast.success("Check your emails!");
-
+        // You can implement magic link functionality with NextAuth Email provider
+        // For now, we'll just show a toast message
+        toast.success("Magic link functionality not implemented yet!");
         setIsDisabled(true);
       }
     } catch (error) {
       console.log(error);
+      toast.error("An error occurred during sign in");
     } finally {
       setIsLoading(false);
     }

@@ -1,40 +1,40 @@
-import { ReactNode } from "react";
-import { Inter } from "next/font/google";
-import { Viewport } from "next";
-import PlausibleProvider from "next-plausible";
-import { getSEOTags } from "@/libs/seo";
-import ClientLayout from "@/components/LayoutClient";
-import config from "@/config";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
+import NextTopLoader from "nextjs-toploader";
+import config from "@/config";
+import { Providers } from "./providers";
 
-const font = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
-export const viewport: Viewport = {
-  // Will use the primary color of your theme to show a nice theme color in the URL bar of supported browsers
-  themeColor: config.colors.main,
-  width: "device-width",
-  initialScale: 1,
+// SEO
+export const metadata: Metadata = {
+  metadataBase: new URL(`https://${config.domainName}`),
+  title: config.appName,
+  description: config.appDescription,
 };
 
-// This adds default SEO tags to all pages in our app.
-// You can override them in each page passing params to getSOTags() function.
-export const metadata = getSEOTags();
-
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" data-theme={config.colors.theme} className={font.className}>
-      {config.domainName && (
-        <head>
-          <PlausibleProvider domain={config.domainName} />
-        </head>
-      )}
+    <html lang="en" data-theme={config.colors.theme} className={inter.className}>
+      <head>
+        <link rel="icon" href="/icon.png" />
+      </head>
       <body>
-        {/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}
-        <ClientLayout>{children}</ClientLayout>
-        <Analytics />
-        <SpeedInsights />
+        <Providers>
+          <NextTopLoader color={config.colors.main} showSpinner={false} />
+          {children}
+          <Toaster position="bottom-center" />
+          <Analytics />
+          <SpeedInsights />
+        </Providers>
       </body>
     </html>
   );

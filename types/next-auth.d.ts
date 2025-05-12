@@ -9,5 +9,8 @@ declare module 'next-auth' {
       /** The user's id. */
       id: string;
     } & DefaultSession['user'];
+    
+    /** The OAuth access token */
+    accessToken?: string;
   }
 }

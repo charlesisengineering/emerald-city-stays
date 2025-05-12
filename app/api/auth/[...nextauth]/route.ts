@@ -17,8 +17,10 @@ const handler = NextAuth({
       }
     }),
   ],
+  debug: true, // Enable debug mode to get more detailed error logs
   pages: {
     signIn: "/signin",
+    error: "/signin", // Add custom error page
   },
   callbacks: {
     async jwt({ token, account, profile }) {
@@ -52,7 +54,7 @@ const handler = NextAuth({
       }
       return baseUrl;
     },
-  },
+  }
 });
 
 export { handler as GET, handler as POST };

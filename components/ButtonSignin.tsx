@@ -5,7 +5,12 @@ import { usePathname } from "next/navigation";
 import { signIn, signOut, useSession } from "next-auth/react";
 import config from "@/config";
 
-export default function ButtonSignin() {
+interface ButtonSigninProps {
+  text?: string;
+  extraStyle?: string;
+}
+
+export default function ButtonSignin({ text = "Sign in", extraStyle = "" }: ButtonSigninProps) {
   const { data: session } = useSession();
   const pathname = usePathname();
 
@@ -34,6 +39,11 @@ export default function ButtonSignin() {
             </Link>
           </li>
           <li>
+            <Link href="/manuals" className="justify-between">
+              Manuals
+            </Link>
+          </li>
+          <li>
             <button onClick={() => signOut()}>Logout</button>
           </li>
         </ul>
@@ -47,9 +57,9 @@ export default function ButtonSignin() {
       href={config.auth.loginUrl}
       className={`btn ${
         pathname === config.auth.loginUrl ? "btn-primary" : "btn-ghost"
-      }`}
+      } ${extraStyle}`}
     >
-      Sign in
+      {text}
     </Link>
   );
 }

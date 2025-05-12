@@ -23,7 +23,7 @@ const links: {
 ];
 
 const cta: JSX.Element = (
-  <ButtonSignin text="Prevent disputes" extraStyle="btn-primary md:btn-sm" />
+  <ButtonSignin />
 );
 
 const ButtonPopoverCategories = () => {

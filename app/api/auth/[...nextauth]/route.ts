@@ -17,7 +17,7 @@ const handler = NextAuth({
       }
     }),
   ],
-  debug: true, // Enable debug mode to get more detailed error logs
+  debug: process.env.NEXTAUTH_DEBUG === 'true',
   pages: {
     signIn: "/signin",
     error: "/signin", // Add custom error page

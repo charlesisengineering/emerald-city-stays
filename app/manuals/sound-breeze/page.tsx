@@ -64,7 +64,7 @@ export default function soundBreezeManual() {
                     <h2>Useful Info</h2>
                         <h3>Wifi Info</h3>
                             <ul>
-                                <li>Network: ECSGuestWiFi</li>
+                                <li>Network: EmeraldCityStaysGuest</li>
                                 <li>Password: ecswelcome</li>
                             </ul>
                         <h3>Heating</h3>

@@ -10,13 +10,15 @@
 const csp = [
   "default-src 'self'",
   // Hospitable widget, Google Maps, Plausible, Vercel analytics/speed-insights.
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://hospitable.b-cdn.net https://maps.googleapis.com https://maps.gstatic.com https://plausible.io https://va.vercel-scripts.com",
+  // vercel.live is Vercel's preview-deployment feedback toolbar (preview only).
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://hospitable.b-cdn.net https://maps.googleapis.com https://maps.gstatic.com https://plausible.io https://va.vercel-scripts.com https://vercel.live",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com data:",
-  // Hospitable booking iframe.
-  "frame-src 'self' https://booking.hospitable.com",
-  // XHR/fetch: Supabase, Maps tiles, Plausible events, Vercel vitals.
-  "connect-src 'self' https://*.supabase.co https://maps.googleapis.com https://plausible.io https://vitals.vercel-insights.com https://va.vercel-scripts.com",
+  // Hospitable booking iframe; vercel.live for the preview feedback toolbar.
+  "frame-src 'self' https://booking.hospitable.com https://vercel.live",
+  // XHR/fetch: Hospitable widget API + i18n assets, Supabase, Maps tiles,
+  // Plausible events, Vercel vitals.
+  "connect-src 'self' https://api.hospitable.com https://hospitable.b-cdn.net https://*.supabase.co https://maps.googleapis.com https://plausible.io https://vitals.vercel-insights.com https://va.vercel-scripts.com",
   // Images: Maps tiles + the next/image domains below, plus data/blob URIs.
   "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://*.googleusercontent.com https://lh3.googleusercontent.com https://pbs.twimg.com https://images.unsplash.com https://logos-world.net",
   "object-src 'none'",

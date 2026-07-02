@@ -57,7 +57,13 @@ export interface Review {
     rating: number;          // public.rating — overall, 1–5
     text: string;            // public.review — the public review body
     response: string | null; // public.response — host's public reply, if any
+    guestName: string;       // guest.first_name only (surname intentionally dropped)
     channel: string;         // top-level `platform` (airbnb, vrbo, etc.)
     reviewedAt: string;      // top-level `reviewed_at` (ISO date string)
     propertyId?: string;     // Hospitable property UUID this review belongs to
 }
+
+// A predicate used to include/exclude reviews. Compose several via
+// buildReviewFilter() in libs/reviews.ts. Kept as a plain function type so
+// callers can add ad-hoc filters without touching the lib.
+export type ReviewFilter = (review: Review) => boolean;

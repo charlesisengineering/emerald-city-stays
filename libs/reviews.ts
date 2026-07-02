@@ -1,6 +1,6 @@
 import "server-only";
 import { unstable_cache } from "next/cache";
-import { Review } from "@/types/userTypes";
+import { Review, ReviewFilter } from "@/types/userTypes";
 
 // Server-side Hospitable reviews integration (issue #35).
 //
@@ -37,9 +37,10 @@ function authHeaders(): HeadersInit {
 
 // Map a raw Hospitable review to our normalized, PUBLIC-ONLY Review shape.
 // Verified against a live response: shape is { id, platform, public: { rating,
-// review, response }, private: {...}, reviewed_at, ... }.
-// We deliberately read ONLY from `public` — `raw.private` holds confidential
-// guest feedback and detailed ratings that must never be exposed.
+// review, response }, private: {...}, reviewed_at, guest: { first_name, ... } }.
+// We deliberately read ONLY from `public` and the guest's FIRST name —
+// `raw.private` holds confidential guest feedback and `guest.last_name` is
+// unnecessary for display, so neither is ever exposed.
 function normalize(raw: any, propertyId?: string): Review {
   const pub = raw?.public ?? {};
   return {
@@ -47,6 +48,7 @@ function normalize(raw: any, propertyId?: string): Review {
     rating: Number(pub?.rating ?? 0),
     text: String(pub?.review ?? ""),
     response: pub?.response ? String(pub.response) : null,
+    guestName: String(raw?.guest?.first_name ?? "").trim(),
     channel: String(raw?.platform ?? "direct"),
     reviewedAt: String(raw?.reviewed_at ?? ""),
     propertyId,
@@ -54,7 +56,8 @@ function normalize(raw: any, propertyId?: string): Review {
 }
 
 async function fetchReviewsForProperty(propertyId: string): Promise<Review[]> {
-  const url = `${HOSPITABLE_API}/properties/${propertyId}/reviews`;
+  // include=guest adds the guest object so we can show a first name.
+  const url = `${HOSPITABLE_API}/properties/${propertyId}/reviews?include=guest`;
   const res = await fetch(url, {
     headers: authHeaders(),
     // Let unstable_cache own caching; keep the raw fetch uncached here.
@@ -75,26 +78,82 @@ async function fetchReviewsForProperty(propertyId: string): Promise<Review[]> {
   return items.map((r) => normalize(r, propertyId));
 }
 
-// Public API: all reviews across every property, cached.
-// Used by the hero page (#37) to show aggregate/featured reviews.
-export const getAllReviews = unstable_cache(
+// ---------------------------------------------------------------------------
+// Filters — modular, composable predicates. Filtering happens AFTER the cache
+// so changing which reviews are shown never requires busting the cached fetch.
+// ---------------------------------------------------------------------------
+
+// Common reusable filters. Add more here as needs arise.
+export const reviewFilters = {
+  minRating:
+    (min: number): ReviewFilter =>
+    (r) => r.rating >= min,
+  exactRating:
+    (rating: number): ReviewFilter =>
+    (r) => r.rating === rating,
+  hasText: (): ReviewFilter => (r) => r.text.trim().length > 0,
+  channel:
+    (...channels: string[]): ReviewFilter =>
+    (r) => channels.includes(r.channel),
+};
+
+// The default policy for public-facing surfaces (hero #37): only 5-star reviews
+// that actually have text. Change this one place to change the site-wide default.
+export const DEFAULT_REVIEW_FILTERS: ReviewFilter[] = [
+  reviewFilters.exactRating(5),
+  reviewFilters.hasText(),
+];
+
+// Combine filters with AND. No filters => everything passes.
+export function buildReviewFilter(
+  filters: ReviewFilter[] = DEFAULT_REVIEW_FILTERS
+): ReviewFilter {
+  return (review) => filters.every((f) => f(review));
+}
+
+// ---------------------------------------------------------------------------
+// Cached raw fetchers — return ALL normalized reviews (no filtering), so the
+// cache is filter-agnostic and shared across callers.
+// ---------------------------------------------------------------------------
+
+const getAllReviewsRaw = unstable_cache(
   async (): Promise<Review[]> => {
     const perProperty = await Promise.all(
       Object.values(PROPERTY_IDS).map((id) => fetchReviewsForProperty(id))
     );
     return perProperty
       .flat()
-      .filter((r) => r.text && r.rating > 0)
       .sort((a, b) => (a.reviewedAt < b.reviewedAt ? 1 : -1));
   },
   ["hospitable-all-reviews"],
   { revalidate: REVALIDATE_SECONDS, tags: ["reviews"] }
 );
 
-// Public API: reviews for a single property, cached. For property pages (#36).
-export const getReviewsForProperty = (propertyId: string) =>
+const getRawReviewsForProperty = (propertyId: string) =>
   unstable_cache(
     () => fetchReviewsForProperty(propertyId),
     ["hospitable-reviews", propertyId],
     { revalidate: REVALIDATE_SECONDS, tags: ["reviews"] }
   )();
+
+// ---------------------------------------------------------------------------
+// Public API — apply filters after the cache. Callers may pass their own
+// filter list; omitting it uses DEFAULT_REVIEW_FILTERS (5-star only).
+// ---------------------------------------------------------------------------
+
+// All reviews across every property. Used by the hero (#37).
+export async function getAllReviews(
+  filters: ReviewFilter[] = DEFAULT_REVIEW_FILTERS
+): Promise<Review[]> {
+  const all = await getAllReviewsRaw();
+  return all.filter(buildReviewFilter(filters));
+}
+
+// Reviews for a single property. For property pages (#36).
+export async function getReviewsForProperty(
+  propertyId: string,
+  filters: ReviewFilter[] = DEFAULT_REVIEW_FILTERS
+): Promise<Review[]> {
+  const all = await getRawReviewsForProperty(propertyId);
+  return all.filter(buildReviewFilter(filters));
+}

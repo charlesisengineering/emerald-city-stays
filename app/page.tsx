@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Properties from "@/components/Properties";
+import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
 import { renderSchemaTags } from "@/libs/seo";
 import React from "react";
@@ -22,6 +23,9 @@ export default function Home() {
             headlineText='Our Properties'
             taglineText='We&apos;ve got you covered from Shoreline to Tukwila'
             showHospitableSearchWidget/>
+        <Suspense>
+          <Reviews />
+        </Suspense>
         {/* <FAQ />
         <CTA /> */}
       </main>

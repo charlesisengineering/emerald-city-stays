@@ -60,8 +60,11 @@ async function fetchReviewsForProperty(propertyId: string): Promise<Review[]> {
   const url = `${HOSPITABLE_API}/properties/${propertyId}/reviews?include=guest`;
   const res = await fetch(url, {
     headers: authHeaders(),
-    // Let unstable_cache own caching; keep the raw fetch uncached here.
-    cache: "no-store",
+    // NOTE: do NOT set cache: "no-store" here — it's illegal inside
+    // unstable_cache (throws at render). Use time-based revalidation so a
+    // statically-prerendered page (e.g. the homepage) becomes ISR and refreshes
+    // reviews on schedule instead of freezing them at build time.
+    next: { revalidate: REVALIDATE_SECONDS },
   });
 
   if (!res.ok) {

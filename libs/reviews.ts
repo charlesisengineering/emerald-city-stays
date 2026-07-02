@@ -23,6 +23,17 @@ export const PROPERTY_IDS = {
   soundBreeze: "68ed0d13-cf00-4ef8-aba1-b85db359067f",
 } as const;
 
+// Display names for each property UUID, matching the listing pages.
+const PROPERTY_NAMES: Record<string, string> = {
+  [PROPERTY_IDS.songbird]: "Songbird Suite",
+  [PROPERTY_IDS.launchpad]: "Seattle Launchpad",
+  [PROPERTY_IDS.soundBreeze]: "Sound Breeze",
+};
+
+export function propertyName(propertyId?: string): string {
+  return (propertyId && PROPERTY_NAMES[propertyId]) || "";
+}
+
 function authHeaders(): HeadersInit {
   const token = process.env.HOSPITABLE_API_TOKEN;
   if (!token) {

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Review } from "@/types/userTypes";
+import PlatformBadge from "./PlatformBadge";
 
 // Client component: renders one review with configurable truncation and an
 // expand/collapse toggle. The server passes the FULL text; truncation is purely
@@ -28,9 +29,11 @@ const StarRow = ({ rating }: { rating: number }) => (
 
 const ReviewCard = ({
   review,
+  propertyName,
   truncateAt = 240,
 }: {
   review: Review;
+  propertyName?: string;
   truncateAt?: number;
 }) => {
   const [expanded, setExpanded] = useState(false);
@@ -65,14 +68,23 @@ const ReviewCard = ({
         )}
       </p>
 
-      <div className="mt-auto flex items-center gap-2 text-sm text-base-content/60">
-        {review.guestName && (
-          <span className="font-semibold text-base-content/80">
-            {review.guestName}
-          </span>
-        )}
-        {review.guestName && date && <span>·</span>}
-        {date && <span>{date}</span>}
+      <div className="mt-auto flex flex-col gap-1.5 text-sm text-base-content/60">
+        <div className="flex items-center gap-2">
+          {review.guestName && (
+            <span className="font-semibold text-base-content/80">
+              {review.guestName}
+            </span>
+          )}
+          {review.guestName && date && <span>·</span>}
+          {date && <span>{date}</span>}
+        </div>
+        <div className="flex items-center gap-2">
+          {propertyName && (
+            <span className="text-base-content/70">{propertyName}</span>
+          )}
+          {propertyName && <span>·</span>}
+          <PlatformBadge channel={review.channel} />
+        </div>
       </div>
     </li>
   );

@@ -1,4 +1,4 @@
-import { getAllReviews } from "@/libs/reviews";
+import { getAllReviews, propertyName } from "@/libs/reviews";
 import { ReviewFilter } from "@/types/userTypes";
 import ReviewCard from "./ReviewCard";
 
@@ -32,6 +32,7 @@ const Reviews = async ({
             <ReviewCard
               key={review.id}
               review={review}
+              propertyName={propertyName(review.propertyId)}
               truncateAt={truncateAt}
             />
           ))}

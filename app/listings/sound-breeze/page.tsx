@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
+import HouseRules from "@/components/HouseRules";
 import { renderSchemaTags } from "@/libs/seo";
 import React from 'react';
 import image1 from '@/app/SoundBreezePhotos/entry.jpg'
@@ -101,7 +102,8 @@ export default function soundBreezePropertyPage() {
                 blocks away. Finally, for guests with cars we offer safe off street parking and a 
                 15 minute drive to Downtown Seattle.'
             carouselImages={images}
-            bookingWidget="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/1198778"/>
+            bookingWidget="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/1198778"
+            houseRules={<HouseRules property="sound-breeze" />}/>
       </main>
       <Footer />
     </>

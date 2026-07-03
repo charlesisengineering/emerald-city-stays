@@ -19,6 +19,17 @@ export interface PropertyRules {
   eventsAllowed: boolean | null;
 }
 
+// Format Hospitable's 24h "HH:MM" into a friendly "3 PM" / "10 AM".
+// Drops ":00" for on-the-hour times; keeps minutes otherwise ("10:30 AM").
+export function formatTime(hhmm: string | null): string | null {
+  if (!hhmm) return null;
+  const [h, m] = hhmm.split(":").map(Number);
+  if (Number.isNaN(h)) return hhmm;
+  const period = h >= 12 ? "PM" : "AM";
+  const hour12 = h % 12 === 0 ? 12 : h % 12;
+  return m ? `${hour12}:${String(m).padStart(2, "0")} ${period}` : `${hour12} ${period}`;
+}
+
 // Map a friendly key (or a raw UUID) to the Hospitable property UUID.
 function resolvePropertyId(propertyKeyOrId: string): string {
   return (

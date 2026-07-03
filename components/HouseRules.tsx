@@ -1,5 +1,5 @@
 import { getRuleContent } from "@/libs/mdx";
-import { getPropertyRules } from "@/libs/propertyRules";
+import { getPropertyRules, formatTime } from "@/libs/propertyRules";
 
 // Maps a property's kebab-case slug (used for content paths + manual slugs) to
 // the camelCase key libs/reviews.ts PROPERTY_IDS uses for the Hospitable UUID.
@@ -46,8 +46,8 @@ const HouseRules = async ({ property }: { property: string }) => {
         <>
           <h4>Check-In and Check-Out</h4>
           <p>
-            Check-in begins at {rules.checkin} and check-out is at{" "}
-            {rules.checkout}.
+            Check-in begins at {formatTime(rules.checkin)} and check-out is at{" "}
+            {formatTime(rules.checkout)}.
           </p>
         </>
       )}

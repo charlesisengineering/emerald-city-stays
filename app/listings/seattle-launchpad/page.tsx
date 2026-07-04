@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
+import HouseRules from "@/components/HouseRules";
 import { renderSchemaTags } from "@/libs/seo";
 import React from 'react';
 import image1 from '@/app/LaunchpadPhotos/living.jpeg'
@@ -81,7 +82,8 @@ export default function launchpadPropertyPage() {
             neighborhoodDescription='The neighborhood is very residential while also being centrally located. You&apos;ll be 
             within 15 minutes of Downtown Seattle and within 10 minutes of cool urban centers in White Center and Georgetown.'
             carouselImages={images}
-            bookingWidget={bookingWidgetUrl('launchpad')}/>
+            bookingWidget={bookingWidgetUrl('launchpad')}
+            houseRules={<HouseRules property="launchpad" />}/>
       </main>
       <Footer />
     </>

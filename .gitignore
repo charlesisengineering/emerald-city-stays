@@ -41,3 +41,5 @@ public/sitemap-0.xml
 
 # project planning (Notion export, local only)
 project planning/
+# GSC exports / local scratch (not committed)
+temp/

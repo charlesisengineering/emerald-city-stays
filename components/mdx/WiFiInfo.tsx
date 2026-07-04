@@ -1,7 +1,8 @@
 import wifiCredentials from '@/content/manuals/wifi';
+import { PropertySlug } from '@/libs/properties';
 
 type WiFiInfoProps = {
-  property: string;
+  property: PropertySlug;
 };
 
 export default function WiFiInfo({ property }: WiFiInfoProps) {

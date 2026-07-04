@@ -1,6 +1,6 @@
 import "server-only";
 import { unstable_cache } from "next/cache";
-import { PROPERTY_IDS } from "@/libs/reviews";
+import { PROPERTIES, PropertySlug } from "@/libs/properties";
 
 // Structured house-rule facts sourced from Hospitable (the authoritative source
 // for things that can change and would otherwise drift). Currently check-in /
@@ -30,13 +30,6 @@ export function formatTime(hhmm: string | null): string | null {
   return m ? `${hour12}:${String(m).padStart(2, "0")} ${period}` : `${hour12} ${period}`;
 }
 
-// Map a friendly key (or a raw UUID) to the Hospitable property UUID.
-function resolvePropertyId(propertyKeyOrId: string): string {
-  return (
-    (PROPERTY_IDS as Record<string, string>)[propertyKeyOrId] ?? propertyKeyOrId
-  );
-}
-
 function authHeaders(): HeadersInit {
   const token = process.env.HOSPITABLE_API_TOKEN;
   if (!token) throw new Error("HOSPITABLE_API_TOKEN is not set");
@@ -64,9 +57,9 @@ async function fetchRules(propertyId: string): Promise<PropertyRules | null> {
 }
 
 export function getPropertyRules(
-  propertyKeyOrId: string
+  property: PropertySlug
 ): Promise<PropertyRules | null> {
-  const id = resolvePropertyId(propertyKeyOrId);
+  const id = PROPERTIES[property].uuid;
   return unstable_cache(() => fetchRules(id), ["property-rules", id], {
     revalidate: REVALIDATE_SECONDS,
     tags: ["property-rules"],

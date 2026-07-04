@@ -128,7 +128,7 @@ export default function launchpadManual() {
                         {/* <img src={trashImage.src} alt="Trash cans at Sound Breeze"/> */}
                         </ul>
                         <h3>Smoking</h3>
-                        <p>The property is non-smoking. If you wish to smoke, please do so at the alley in the back.</p>
+                        <p>The property is non-smoking. If you wish to smoke, please do so at the street in the front. Please dispose of cigarette butts in the trash after fully extinguishing them.</p>
                         <h3>Check In and Out Times</h3>
                         <p>Check-in begins at 3 PM on your arrival date and check-out is at 10 AM.</p>
 

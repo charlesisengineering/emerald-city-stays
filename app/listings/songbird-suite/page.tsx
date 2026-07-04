@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
+import HouseRules from "@/components/HouseRules";
 import { renderSchemaTags } from "@/libs/seo";
 import React from 'react';
 import image1 from '@/app/SongbirdPhotos/king3.jpeg';
@@ -83,7 +84,8 @@ export default function songbirdPropertyPage() {
             
             The cross streets for the Airbnb are 15th Ave NE and NE 102nd Street.'
             carouselImages={images}
-            bookingWidget={bookingWidgetUrl('songbird')}/>
+            bookingWidget={bookingWidgetUrl('songbird')}
+            houseRules={<HouseRules property="songbird" />}/>
       </main>
       <Footer />
     </>

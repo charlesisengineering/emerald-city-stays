@@ -1,5 +1,6 @@
 import ManualImage from './ManualImage';
 import WiFiInfo from './WiFiInfo';
+import SharedRule from './SharedRule';
 import { MDXComponents } from 'mdx/types';
 
 // Creates MDX component overrides with the property slug baked in.
@@ -11,5 +12,8 @@ export function getManualComponents(property: string): MDXComponents {
       <ManualImage {...props} property={property} />
     ),
     WiFiInfo: () => <WiFiInfo property={property} />,
+    SharedRule: (props: { name: string }) => (
+      <SharedRule {...props} property={property} />
+    ),
   };
 }

@@ -1,6 +1,7 @@
 import "server-only";
 import { unstable_cache } from "next/cache";
 import { Review, ReviewFilter } from "@/types/userTypes";
+import { PROPERTY_UUIDS } from "@/libs/properties";
 
 // Server-side Hospitable reviews integration (issue #35).
 //
@@ -15,24 +16,9 @@ import { Review, ReviewFilter } from "@/types/userTypes";
 const HOSPITABLE_API = "https://public.api.hospitable.com/v2";
 const REVALIDATE_SECONDS = 60 * 60; // 1 hour
 
-// Hospitable property UUIDs (verified via GET /v2/properties). These are the
-// API's ids — distinct from the numeric ids in the booking-widget URLs.
-export const PROPERTY_IDS = {
-  songbird: "cd772683-92f8-4bdc-ad7d-a09bc47b3bc3",
-  launchpad: "e3a626e7-de87-4d9e-b5fc-db9761dcb887",
-  soundBreeze: "68ed0d13-cf00-4ef8-aba1-b85db359067f",
-} as const;
-
-// Display names for each property UUID, matching the listing pages.
-const PROPERTY_NAMES: Record<string, string> = {
-  [PROPERTY_IDS.songbird]: "Songbird Suite",
-  [PROPERTY_IDS.launchpad]: "Seattle Launchpad",
-  [PROPERTY_IDS.soundBreeze]: "Sound Breeze",
-};
-
-export function propertyName(propertyId?: string): string {
-  return (propertyId && PROPERTY_NAMES[propertyId]) || "";
-}
+// Property identity (UUIDs, display names) lives in libs/properties.ts — the
+// single source of truth. Re-exported here for existing call sites.
+export { propertyName } from "@/libs/properties";
 
 function authHeaders(): HeadersInit {
   const token = process.env.HOSPITABLE_API_TOKEN;
@@ -133,7 +119,7 @@ export function buildReviewFilter(
 const getAllReviewsRaw = unstable_cache(
   async (): Promise<Review[]> => {
     const perProperty = await Promise.all(
-      Object.values(PROPERTY_IDS).map((id) => fetchReviewsForProperty(id))
+      PROPERTY_UUIDS.map((id) => fetchReviewsForProperty(id))
     );
     return perProperty
       .flat()

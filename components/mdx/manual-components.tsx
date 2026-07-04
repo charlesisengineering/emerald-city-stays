@@ -1,12 +1,13 @@
 import ManualImage from './ManualImage';
 import WiFiInfo from './WiFiInfo';
 import SharedRule from './SharedRule';
+import { PropertySlug } from '@/libs/properties';
 import { MDXComponents } from 'mdx/types';
 
 // Creates MDX component overrides with the property slug baked in.
 // This way the MDX content can just write <ManualImage name="parking" />
 // without needing to pass the property name every time.
-export function getManualComponents(property: string): MDXComponents {
+export function getManualComponents(property: PropertySlug): MDXComponents {
   return {
     ManualImage: (props: { name: string; className?: string }) => (
       <ManualImage {...props} property={property} />

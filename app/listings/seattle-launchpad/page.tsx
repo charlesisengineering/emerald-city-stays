@@ -4,7 +4,20 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
-import { renderSchemaTags } from "@/libs/seo";
+import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+
+export const metadata = getSEOTags({
+  title: "Seattle Launchpad — Furnished Rental near SeaTac & Downtown Seattle",
+  description:
+    "A furnished guest suite in the Boulevard Park / Highline area of Seattle, minutes from SeaTac Airport and a short drive to Downtown. Full kitchen, private entrance, and off-street parking.",
+  keywords: [
+    "furnished rental near SeaTac",
+    "Boulevard Park Seattle rental",
+    "Highline Seattle guest suite",
+    "furnished rental south Seattle",
+  ],
+  canonicalUrlRelative: "/listings/seattle-launchpad",
+});
 import React from 'react';
 import image1 from '@/app/LaunchpadPhotos/living.jpeg'
 import image2 from '@/app/LaunchpadPhotos/king.jpeg'

@@ -4,7 +4,19 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
-import { renderSchemaTags } from "@/libs/seo";
+import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+
+export const metadata = getSEOTags({
+  title: "Sound Breeze — Furnished Rental in Gatewood, West Seattle",
+  description:
+    "A newly renovated 2-bedroom guest suite in Gatewood, West Seattle. Puget Sound views, full kitchen, fiber internet, and off-street parking near Lincoln Park and the Morgan Junction.",
+  keywords: [
+    "West Seattle furnished rental",
+    "Gatewood vacation rental",
+    "Seattle guest suite",
+  ],
+  canonicalUrlRelative: "/listings/sound-breeze",
+});
 import React from 'react';
 import image1 from '@/app/SoundBreezePhotos/entry.jpg'
 import image2 from '@/app/SoundBreezePhotos/king_bed.jpg'

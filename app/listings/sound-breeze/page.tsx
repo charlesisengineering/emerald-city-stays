@@ -11,7 +11,8 @@ import image2 from '@/app/SoundBreezePhotos/king_bed.jpg'
 import image3 from '@/app/SoundBreezePhotos/kitchen_dining.jpg'
 import image4 from '@/app/SoundBreezePhotos/bathroom.jpg'
 import image5 from '@/app/SoundBreezePhotos/seating.jpg'
-import { amenitiesList , MapCoordinates} from "@/types/userTypes";
+import { amenitiesList } from "@/types/userTypes";
+import { PROPERTIES, bookingWidgetUrl } from "@/libs/properties";
 
 export default function soundBreezePropertyPage() {
 
@@ -23,10 +24,6 @@ export default function soundBreezePropertyPage() {
         image4,
         image5
     ];
-
-    const soundBreezeCoordinates: MapCoordinates = {
-        latitude: 47.542100489716034, 
-        longitude: -122.3783156994263};
 
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const soundBreezeAmenities: amenitiesList = {
@@ -92,8 +89,8 @@ export default function soundBreezePropertyPage() {
                 The serene Gatewood neighborhood features stunning Puget Sound views, an abundance of 
                 walkable cafes, restaurants, and parks, and convenient access to the Morgan Junction, Lincoln Park, or Downtown Seattle.'
             
-            propertyCoordinates={soundBreezeCoordinates}
-            neighborhoodDescription='Gatewood is a serene neighborhood with lush greenery, abundant parks and cafes, 
+            propertyCoordinates={PROPERTIES['sound-breeze'].coords}
+            neighborhoodDescription='Gatewood is a serene neighborhood with lush greenery, abundant parks and cafes,
                 and stunning views of the Puget Sound and Downtown Seattle. The quiet neighborhood 
                 is a walker&apos;s delight with multiple parks, coffee shops and restaurants within easy walking distance.
 
@@ -102,7 +99,7 @@ export default function soundBreezePropertyPage() {
                 blocks away. Finally, for guests with cars we offer safe off street parking and a 
                 15 minute drive to Downtown Seattle.'
             carouselImages={images}
-            bookingWidget="https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/1198778"
+            bookingWidget={bookingWidgetUrl('sound-breeze')}
             houseRules={<HouseRules property="sound-breeze" />}/>
       </main>
       <Footer />

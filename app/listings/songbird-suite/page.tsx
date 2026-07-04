@@ -9,7 +9,8 @@ import image1 from '@/app/SongbirdPhotos/king3.jpeg';
 import image2 from '@/app/SongbirdPhotos/kitchen.jpeg';
 import image3 from '@/app/SongbirdPhotos/living.jpeg';
 import image4 from '@/app/SongbirdPhotos/bathroom.jpeg';
-import { amenitiesList, MapCoordinates } from "@/types/userTypes";
+import { amenitiesList } from "@/types/userTypes";
+import { PROPERTIES, bookingWidgetUrl } from "@/libs/properties";
 
 export default function songbirdPropertyPage() {
 
@@ -20,10 +21,6 @@ export default function songbirdPropertyPage() {
         image3,
         image4
     ];
-
-    const songbirdCoordinates: MapCoordinates = {
-        latitude: 47.70262199168761, 
-        longitude: -122.31209870196159};
 
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const songbirdAmenities: amenitiesList = {
@@ -80,13 +77,13 @@ export default function songbirdPropertyPage() {
             access to the heart of Seattle with just one bus ride from a stop a block away. The private suite accommodates 
             4 guests with plenty of space to stretch out, super-fast fiber internet, a new 65" smart TV, and a brand new 
             kitchen for preparing meals.'
-            propertyCoordinates={songbirdCoordinates}
+            propertyCoordinates={PROPERTIES['songbird'].coords}
             neighborhoodDescription='Maple Leaf provides a tranquil environment just north of the center of Seattle with 
             plenty of cool eateries and easy access to the developing Northgate area.
             
             The cross streets for the Airbnb are 15th Ave NE and NE 102nd Street.'
             carouselImages={images}
-            bookingWidget='https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/493270'/>
+            bookingWidget={bookingWidgetUrl('songbird')}/>
       </main>
       <Footer />
     </>

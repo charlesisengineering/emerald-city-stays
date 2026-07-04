@@ -9,7 +9,8 @@ import image1 from '@/app/LaunchpadPhotos/living.jpeg'
 import image2 from '@/app/LaunchpadPhotos/king.jpeg'
 import image3 from '@/app/LaunchpadPhotos/kitchen.jpeg'
 import image4 from '@/app/LaunchpadPhotos/bathroom.jpeg'
-import { amenitiesList, MapCoordinates } from "@/types/userTypes";
+import { amenitiesList } from "@/types/userTypes";
+import { PROPERTIES, bookingWidgetUrl } from "@/libs/properties";
 
 export default function launchpadPropertyPage() {
 
@@ -20,10 +21,6 @@ export default function launchpadPropertyPage() {
         image3,
         image4
     ];
-    // assign a const of type MapCoordinates with values for latitude and longitude
-    const launchpadCoordinates:MapCoordinates = {
-        latitude: 47.50275263739177, 
-        longitude: -122.31943184513266};
 
     // create an instance of an amenitiesList to pass to propertyAmenities below
     const launchpadAmenities: amenitiesList = {
@@ -80,11 +77,11 @@ export default function launchpadPropertyPage() {
             you&apos;ll be just a short drive from everything the Emerald City has to offer. The private suite accommodates 
             4 guests with plenty of space to stretch out, super-fast internet, air conditioning, two workstations 
             for remote workers, a new 58" smart TV, and a full kitchen for preparing meals.' 
-            propertyCoordinates={launchpadCoordinates}
+            propertyCoordinates={PROPERTIES['launchpad'].coords}
             neighborhoodDescription='The neighborhood is very residential while also being centrally located. You&apos;ll be 
             within 15 minutes of Downtown Seattle and within 10 minutes of cool urban centers in White Center and Georgetown.'
             carouselImages={images}
-            bookingWidget='https://booking.hospitable.com/widget/9ca01362-9da8-44f3-9e64-18080aceba27/614010'/>
+            bookingWidget={bookingWidgetUrl('launchpad')}/>
       </main>
       <Footer />
     </>

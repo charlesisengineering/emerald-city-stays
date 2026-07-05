@@ -52,29 +52,46 @@ function normalize(raw: any, propertyId?: string): Review {
   };
 }
 
-async function fetchReviewsForProperty(propertyId: string): Promise<Review[]> {
-  // include=guest adds the guest object so we can show a first name.
-  const url = `${HOSPITABLE_API}/properties/${propertyId}/reviews?include=guest`;
-  const res = await fetch(url, {
-    headers: authHeaders(),
-    // NOTE: do NOT set cache: "no-store" here — it's illegal inside
-    // unstable_cache (throws at render). Use time-based revalidation so a
-    // statically-prerendered page (e.g. the homepage) becomes ISR and refreshes
-    // reviews on schedule instead of freezing them at build time.
-    next: { revalidate: REVALIDATE_SECONDS },
-  });
+// Hospitable paginates reviews (default ~10/page). We must page through ALL of
+// them — otherwise both the displayed reviews and the schema AggregateRating
+// only reflect the newest ~10. Request a large page size and follow `next`
+// links until exhausted, with a hard page cap as a runaway guard.
+const REVIEWS_PER_PAGE = 100;
+const MAX_REVIEW_PAGES = 20;
 
-  if (!res.ok) {
-    // Don't blow up a whole page because one property's reviews failed —
-    // log and return nothing for this property.
-    console.error(
-      `[reviews] Hospitable ${res.status} for property ${propertyId}`
-    );
-    return [];
+async function fetchReviewsForProperty(propertyId: string): Promise<Review[]> {
+  const items: any[] = [];
+  // include=guest adds the guest object so we can show a first name.
+  let url:
+    | string
+    | null = `${HOSPITABLE_API}/properties/${propertyId}/reviews?include=guest&per_page=${REVIEWS_PER_PAGE}`;
+
+  for (let page = 0; url && page < MAX_REVIEW_PAGES; page++) {
+    const res = await fetch(url, {
+      headers: authHeaders(),
+      // NOTE: do NOT set cache: "no-store" here — it's illegal inside
+      // unstable_cache (throws at render). Time-based revalidation lets a
+      // statically-prerendered page become ISR and refresh on schedule.
+      next: { revalidate: REVALIDATE_SECONDS },
+    });
+
+    if (!res.ok) {
+      // Don't blow up a whole page because one property's reviews failed —
+      // log and return whatever we've gathered so far.
+      console.error(
+        `[reviews] Hospitable ${res.status} for property ${propertyId} (page ${page + 1})`
+      );
+      break;
+    }
+
+    const json = await res.json();
+    if (Array.isArray(json?.data)) items.push(...json.data);
+
+    // Follow the API's next-page link (normalize http→https from the payload).
+    const next: string | null = json?.links?.next ?? null;
+    url = next ? next.replace(/^http:/, "https:") : null;
   }
 
-  const json = await res.json();
-  const items: any[] = Array.isArray(json?.data) ? json.data : [];
   return items.map((r) => normalize(r, propertyId));
 }
 

@@ -21,7 +21,11 @@ const PropertySchema = async ({ property }: { property: PropertySlug }) => {
 
   const url = `https://${config.domainName}/listings/${property}`;
 
-  const withText = reviews.filter((r) => r.text && r.rating > 0);
+  // Newest-first, so the 10 reviews embedded below are the most recent.
+  // (The per-property fetch returns API order, which isn't guaranteed sorted.)
+  const withText = reviews
+    .filter((r) => r.text && r.rating > 0)
+    .sort((a, b) => (a.reviewedAt < b.reviewedAt ? 1 : -1));
   const ratingCount = reviews.filter((r) => r.rating > 0).length;
   const avg =
     ratingCount > 0

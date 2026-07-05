@@ -4,7 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
-import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import PropertySchema from "@/components/PropertySchema";
+import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
   title: "Songbird Suite — Furnished Rental in Maple Leaf, Seattle",
@@ -71,7 +72,7 @@ export default function songbirdPropertyPage() {
 
   return (
     <>
-    {renderSchemaTags()}
+    <PropertySchema property="songbird" />
       <Suspense>
         <Header />
       </Suspense>

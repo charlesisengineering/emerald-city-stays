@@ -4,7 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
-import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import PropertySchema from "@/components/PropertySchema";
+import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
   title: "Seattle Launchpad — Furnished Rental near SeaTac & Downtown Seattle",
@@ -72,7 +73,7 @@ export default function launchpadPropertyPage() {
 
   return (
     <>
-    {renderSchemaTags()}
+    <PropertySchema property="launchpad" />
       <Suspense>
         <Header />
       </Suspense>

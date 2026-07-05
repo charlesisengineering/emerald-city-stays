@@ -1,6 +1,14 @@
 import Properties from "@/components/Properties";
-import { renderSchemaTags } from "@/libs/seo";
+import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 import React from "react";
+
+// House manuals are for booked guests and contain access info (WiFi, entry
+// codes) — they should not be indexed by search engines.
+export const metadata = getSEOTags({
+  title: "House Manuals | Emerald City Stays",
+  canonicalUrlRelative: "/manuals",
+  robots: { index: false, follow: true },
+});
 
 export default function HouseManual() {
   return (

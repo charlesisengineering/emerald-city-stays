@@ -4,7 +4,19 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
-import { renderSchemaTags } from "@/libs/seo";
+import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+
+export const metadata = getSEOTags({
+  title: "Songbird Suite — Furnished Rental in Maple Leaf, Seattle",
+  description:
+    "A spacious 1,100 sq ft furnished suite in the Maple Leaf neighborhood of North Seattle. Sleeps 4, full kitchen, fiber internet, and off-street parking near Northgate.",
+  keywords: [
+    "Maple Leaf furnished rental",
+    "North Seattle vacation rental",
+    "Northgate guest suite",
+  ],
+  canonicalUrlRelative: "/listings/songbird-suite",
+});
 import React from 'react';
 import image1 from '@/app/SongbirdPhotos/king3.jpeg';
 import image2 from '@/app/SongbirdPhotos/kitchen.jpeg';

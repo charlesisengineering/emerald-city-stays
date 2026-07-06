@@ -71,7 +71,7 @@ const PropertyReviews = async ({
           {/* Visible aggregate — computed from ALL reviews, matches the schema */}
           <div className="flex items-center gap-2 text-lg">
             <StarRow rating={average} />
-            <span className="font-bold">{average.toFixed(1)}</span>
+            <span className="font-bold">{parseFloat(average.toFixed(2))}</span>
             <span className="text-base-content/60">
               · {rated.length} reviews
             </span>

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
 import PropertySchema from "@/components/PropertySchema";
+import PropertyReviews from "@/components/PropertyReviews";
 import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
@@ -98,7 +99,8 @@ export default function songbirdPropertyPage() {
             The cross streets for the Airbnb are 15th Ave NE and NE 102nd Street.'
             carouselImages={images}
             bookingWidget={bookingWidgetUrl('songbird')}
-            houseRules={<HouseRules property="songbird" />}/>
+            houseRules={<HouseRules property="songbird" />}
+            reviews={<PropertyReviews property="songbird" />}/>
       </main>
       <Footer />
     </>

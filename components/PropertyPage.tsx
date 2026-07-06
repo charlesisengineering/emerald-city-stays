@@ -19,7 +19,8 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
     neighborhoodDescription,
     carouselImages,
     bookingWidget,
-    houseRules
+    houseRules,
+    reviews
 }) => {
     // script to pull dates selected in property search into property page
     // because clicking on a search result redirects to the live url, this can't be debugged easily on localhost
@@ -192,7 +193,8 @@ const PropertyPage: React.FC<PropertyPageProps> = ({
                 {houseRules}
             </div>
         </div>
-            
+
+        {reviews}
 
     </section>
   );

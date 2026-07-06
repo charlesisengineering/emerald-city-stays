@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
 import PropertySchema from "@/components/PropertySchema";
+import PropertyReviews from "@/components/PropertyReviews";
 import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
@@ -113,7 +114,8 @@ export default function soundBreezePropertyPage() {
                 15 minute drive to Downtown Seattle.'
             carouselImages={images}
             bookingWidget={bookingWidgetUrl('sound-breeze')}
-            houseRules={<HouseRules property="sound-breeze" />}/>
+            houseRules={<HouseRules property="sound-breeze" />}
+            reviews={<PropertyReviews property="sound-breeze" />}/>
       </main>
       <Footer />
     </>

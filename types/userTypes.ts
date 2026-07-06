@@ -18,6 +18,7 @@ export interface PropertyPageProps {
     carouselImages: StaticImageData[]; // An array of all images to live in the carousel
     bookingWidget: string; // url for the booking widget, goes into the src of the iframe
     houseRules?: React.ReactNode; // server-rendered <HouseRules/> slot (PropertyPage is a client component)
+    reviews?: React.ReactNode; // server-rendered <PropertyReviews/> slot
 }
 
 export interface MapCoordinates {

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
 import PropertySchema from "@/components/PropertySchema";
+import PropertyReviews from "@/components/PropertyReviews";
 import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
@@ -97,7 +98,8 @@ export default function launchpadPropertyPage() {
             within 15 minutes of Downtown Seattle and within 10 minutes of cool urban centers in White Center and Georgetown.'
             carouselImages={images}
             bookingWidget={bookingWidgetUrl('launchpad')}
-            houseRules={<HouseRules property="launchpad" />}/>
+            houseRules={<HouseRules property="launchpad" />}
+            reviews={<PropertyReviews property="launchpad" />}/>
       </main>
       <Footer />
     </>

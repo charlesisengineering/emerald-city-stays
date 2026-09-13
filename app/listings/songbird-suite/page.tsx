@@ -25,7 +25,7 @@ import image2 from '@/app/SongbirdPhotos/kitchen.jpeg';
 import image3 from '@/app/SongbirdPhotos/living.jpeg';
 import image4 from '@/app/SongbirdPhotos/bathroom.jpeg';
 import { amenitiesList } from "@/types/userTypes";
-import { PROPERTIES, bookingWidgetUrl } from "@/libs/properties";
+import { PROPERTIES } from "@/libs/properties";
 
 export default function songbirdPropertyPage() {
 
@@ -98,7 +98,7 @@ export default function songbirdPropertyPage() {
             
             The cross streets for the Airbnb are 15th Ave NE and NE 102nd Street.'
             carouselImages={images}
-            bookingWidget={bookingWidgetUrl('songbird')}
+            bookingWidgetId={PROPERTIES['songbird'].widgetId}
             houseRules={<HouseRules property="songbird" />}
             reviews={<PropertyReviews property="songbird" />}/>
       </main>

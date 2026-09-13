@@ -26,7 +26,7 @@ import image2 from '@/app/LaunchpadPhotos/king.jpeg'
 import image3 from '@/app/LaunchpadPhotos/kitchen.jpeg'
 import image4 from '@/app/LaunchpadPhotos/bathroom.jpeg'
 import { amenitiesList } from "@/types/userTypes";
-import { PROPERTIES, bookingWidgetUrl } from "@/libs/properties";
+import { PROPERTIES } from "@/libs/properties";
 
 export default function launchpadPropertyPage() {
 
@@ -97,7 +97,7 @@ export default function launchpadPropertyPage() {
             neighborhoodDescription='The neighborhood is very residential while also being centrally located. You&apos;ll be 
             within 15 minutes of Downtown Seattle and within 10 minutes of cool urban centers in White Center and Georgetown.'
             carouselImages={images}
-            bookingWidget={bookingWidgetUrl('launchpad')}
+            bookingWidgetId={PROPERTIES['launchpad'].widgetId}
             houseRules={<HouseRules property="launchpad" />}
             reviews={<PropertyReviews property="launchpad" />}/>
       </main>

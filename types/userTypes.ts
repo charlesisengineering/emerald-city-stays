@@ -16,8 +16,9 @@ export interface PropertyPageProps {
     propertyCoordinates: MapCoordinates;
     neighborhoodDescription: string;
     carouselImages: StaticImageData[]; // An array of all images to live in the carousel
-    bookingWidget: string; // url for the booking widget, goes into the src of the iframe
+    bookingWidgetId: string; // Hospitable data-property-id for the direct-booking-widget loader
     houseRules?: React.ReactNode; // server-rendered <HouseRules/> slot (PropertyPage is a client component)
+    reviews?: React.ReactNode; // server-rendered <PropertyReviews/> slot
 }
 
 export interface MapCoordinates {

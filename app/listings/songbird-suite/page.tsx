@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
 import PropertySchema from "@/components/PropertySchema";
+import PropertyReviews from "@/components/PropertyReviews";
 import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
@@ -24,7 +25,7 @@ import image2 from '@/app/SongbirdPhotos/kitchen.jpeg';
 import image3 from '@/app/SongbirdPhotos/living.jpeg';
 import image4 from '@/app/SongbirdPhotos/bathroom.jpeg';
 import { amenitiesList } from "@/types/userTypes";
-import { PROPERTIES, bookingWidgetUrl } from "@/libs/properties";
+import { PROPERTIES } from "@/libs/properties";
 
 export default function songbirdPropertyPage() {
 
@@ -97,8 +98,9 @@ export default function songbirdPropertyPage() {
             
             The cross streets for the Airbnb are 15th Ave NE and NE 102nd Street.'
             carouselImages={images}
-            bookingWidget={bookingWidgetUrl('songbird')}
-            houseRules={<HouseRules property="songbird" />}/>
+            bookingWidgetId={PROPERTIES['songbird'].widgetId}
+            houseRules={<HouseRules property="songbird" />}
+            reviews={<PropertyReviews property="songbird" />}/>
       </main>
       <Footer />
     </>

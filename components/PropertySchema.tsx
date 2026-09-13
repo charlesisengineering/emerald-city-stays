@@ -56,7 +56,7 @@ const PropertySchema = async ({ property }: { property: PropertySlug }) => {
   if (ratingCount > 0) {
     schema.aggregateRating = {
       "@type": "AggregateRating",
-      ratingValue: Number(avg.toFixed(1)),
+      ratingValue: Number(avg.toFixed(2)),
       reviewCount: ratingCount,
       bestRating: 5,
       worstRating: 1,

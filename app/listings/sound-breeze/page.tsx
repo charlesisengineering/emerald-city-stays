@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PropertyPage from "@/components/PropertyPage";
 import HouseRules from "@/components/HouseRules";
 import PropertySchema from "@/components/PropertySchema";
+import PropertyReviews from "@/components/PropertyReviews";
 import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
@@ -25,7 +26,7 @@ import image3 from '@/app/SoundBreezePhotos/kitchen_dining.jpg'
 import image4 from '@/app/SoundBreezePhotos/bathroom.jpg'
 import image5 from '@/app/SoundBreezePhotos/seating.jpg'
 import { amenitiesList } from "@/types/userTypes";
-import { PROPERTIES, bookingWidgetUrl } from "@/libs/properties";
+import { PROPERTIES } from "@/libs/properties";
 
 export default function soundBreezePropertyPage() {
 
@@ -112,8 +113,9 @@ export default function soundBreezePropertyPage() {
                 blocks away. Finally, for guests with cars we offer safe off street parking and a 
                 15 minute drive to Downtown Seattle.'
             carouselImages={images}
-            bookingWidget={bookingWidgetUrl('sound-breeze')}
-            houseRules={<HouseRules property="sound-breeze" />}/>
+            bookingWidgetId={PROPERTIES['sound-breeze'].widgetId}
+            houseRules={<HouseRules property="sound-breeze" />}
+            reviews={<PropertyReviews property="sound-breeze" />}/>
       </main>
       <Footer />
     </>
